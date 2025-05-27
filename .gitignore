@@ -77,3 +77,4 @@ crashlytics-build.properties
 
 #MacOs
 .DS_Store
+/Assets/Imports
