@@ -41,7 +41,6 @@ namespace Player
             velocity.z = moveDirection.z * moveSpeed;
 
             _rigidbody.velocity = velocity;
-            Debug.Log(velocity);
             
 
             return moveDirection;

@@ -1,6 +1,8 @@
 using System;
 using Player;
 using UnityEngine;
+using Util;
+using Managers;
 
 namespace Test
 {
@@ -9,20 +11,27 @@ namespace Test
         public PlayerStatus _Status;
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _Status.IsInvestigating.Value = !_Status.IsInvestigating.Value;
-                Debug.Log($"isinvestigating : {_Status.IsInvestigating.Value}");
-                Debug.Log($"iscontrolactive : {_Status.IsControlActive.Value}");
-
-            }
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // {
+            //     _Status.IsInvestigating.Value = !_Status.IsInvestigating.Value;
+            //     Debug.Log($"isinvestigating : {_Status.IsInvestigating.Value}");
+            //     Debug.Log($"iscontrolactive : {_Status.IsControlActive.Value}");
+            //
+            // }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                _Status.IsControlActive.Value = !_Status.IsControlActive.Value;
-                Debug.Log($"iscontrolactive : {_Status.IsControlActive.Value}");
+               Manager.Scene.AsncLoadScene(Define.Scene.Test2,2f,true,1);
+               
     
             }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Manager.Scene.AsncLoadScene(Define.Scene.Test3,2f,true,0);
+               
+    
+            }
+            
         }
     }
 }
