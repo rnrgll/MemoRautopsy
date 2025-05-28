@@ -11,6 +11,7 @@ namespace Util
         public static readonly Dictionary<Scene, string> SceneNames = new()
         {
             { Scene.Title, "TitleScene" },
+            { Scene.Lab , "LabScene"},
             { Scene.Test1, "Test_PlayerMoveScene" },
             { Scene.Test2, "Test_SceneMove1" },
             { Scene.Test3, "Test_SceneMove2" },
@@ -22,6 +23,7 @@ namespace Util
         public enum Scene
         {
             Title,
+            Lab,
             Test1,
             Test2,
             Test3
@@ -32,7 +34,7 @@ namespace Util
         {
             Unknown,
             Main,
-            Lab,
+            Inspect,
             Memory,
             UI
         }
