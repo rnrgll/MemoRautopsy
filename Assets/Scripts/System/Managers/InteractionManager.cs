@@ -14,9 +14,11 @@ namespace Managers
         private void Update()
         {
             currentTarget = ShootRay();
+            
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && currentTarget != null)
             {
+                Debug.Log("마우스 클릭");
                 currentTarget.Interact();
             }
             
@@ -29,9 +31,9 @@ namespace Managers
 
             RaycastHit hit;
             Debug.DrawRay(ray.origin, ray.direction * 100f,  Color.green);
-            if (Physics.Raycast(ray, out hit, targetLayer))
+            if (Physics.Raycast(ray,  out hit, 100f, targetLayer))
             {
-                return hit.transform as IInteractable;
+                return hit.transform.GetComponent<IInteractable>();
             }
 
             return null;

@@ -26,7 +26,7 @@ namespace Content.Interactable
 
         public void Interact()
         {
-            Debug.Log(interactText);
+            Debug.Log(infoList[0]);
         }
     }
 }
