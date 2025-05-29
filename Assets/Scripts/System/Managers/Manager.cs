@@ -10,10 +10,11 @@ namespace Managers
         //Manager 등록
         public static SceneManagerEx Scene => SceneManagerEx.Instance;
         public static UIManager UI => UIManager.Instance;
+        public static DataManager Data => DataManager.Instance;
+        
+        
         
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        
-        
         private static void Initialize()
         {
             //매니저 생성 및 초기화 진행
