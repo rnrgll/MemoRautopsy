@@ -1,11 +1,12 @@
 using UnityEngine;
+using Utility;
 
 namespace Content.Interactable
 {
     [CreateAssetMenu(fileName = "ClueData", menuName = "Data/ClueData", order = 0)]
     public class ClueData : ScriptableObject
     {
-        public string clueId;
+        public Define.ClueId clueId;
         public string title;
         public string description;
         public string playerThoughts;

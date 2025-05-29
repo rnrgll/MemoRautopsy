@@ -96,7 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: bfd0ceeaa69344ad48d08cfa59b64be4,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -167,10 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf9dcb605aec44a8aa6831cc43f0507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clueID: 1
-  _delay: 1.5
+  <ClueId>k__BackingField: 1
+  <VirtualCamera>k__BackingField: {fileID: 1562126052}
   interactText: "\uC190\uC5D0\uC788\uB294 \uC0C1\uCC98"
-  _virtualcam: {fileID: 1562126052}
 --- !u!135 &155911411
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -599,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clueUIPrefab: {fileID: 965515868493696986, guid: 3cffc641bc1e54e41849cda9a6129b99,
     type: 3}
+  _delay: 1
   testData: {fileID: 11400000, guid: 067a11dfa18ac4d5cb8e12143eaff9cc, type: 2}
 --- !u!4 &699719841
 Transform:
@@ -1460,7 +1461,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
