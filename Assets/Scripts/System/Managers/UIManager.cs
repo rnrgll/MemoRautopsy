@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Content.UI;
 using DesignPattern;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 namespace Managers
 {
@@ -23,7 +25,18 @@ namespace Managers
 					if (_rootUI == null)
 					{
 						_rootUI = new GameObject("UI_Root");
+						if (FindObjectOfType<EventSystem>() == null)
+						{
+							GameObject eventSystem = new GameObject("EventSystem",
+								typeof(EventSystem),
+								typeof(InputSystemUIInputModule)
+							);
+							eventSystem.transform.SetParent(_rootUI.transform);
+						}
+						
 					}
+					
+					
 				}
 
 				return _rootUI;
@@ -77,7 +90,6 @@ namespace Managers
 
 		public T ShowUI<T>(BaseUI uiPrefab) where T : BaseUI
 		{
-			Debug.Log(uiPrefab.gameObject.name);
 			if (uiPrefab == null) return null;
 			T ui = Instantiate(uiPrefab, RootUI.transform).GetComponent<T>();
 			_UIStack.Push(ui);

@@ -20,7 +20,6 @@ namespace Managers
             //todo: 데이터 찾아서 넘겨주기
             ClueData clueData = testData; 
             ClueUI ui = Manager.UI.ShowUI<ClueUI>(_clueUIPrefab);
-            Debug.Log(ui.name);
             ui.SetData(clueData);
         }
     }

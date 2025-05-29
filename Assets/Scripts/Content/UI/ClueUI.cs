@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using Content.Interactable;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utility;
 
 
 namespace Content.UI
 {
-    public class ClueUI : BaseUI
+    public class ClueUI : BaseUI, IPointerClickHandler
     {
         [SerializeField] private TMP_Text _title;
         [SerializeField] private TMP_Text _description;
@@ -50,6 +51,11 @@ namespace Content.UI
             {
                 Util.UIEnable(target);
             }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            ClosedUI();
         }
     }
 }
