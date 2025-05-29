@@ -5,7 +5,7 @@ using Util;
 
 namespace Content.Interactable
 {
-    public class Body : MonoBehaviour, IInteractable
+    public class BodyDummy : MonoBehaviour, IInteractable
     {
         [SerializeField] private List<string> infoList;
         
