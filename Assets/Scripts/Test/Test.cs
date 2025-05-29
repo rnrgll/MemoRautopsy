@@ -1,7 +1,7 @@
 using System;
 using Player;
 using UnityEngine;
-using Util;
+using Utility;
 using Managers;
 
 namespace Test
