@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Util
+namespace Utility
 {
     public class Define
     {
@@ -37,6 +37,15 @@ namespace Util
             Inspect,
             Memory,
             UI
+        }
+        
+        
+        public enum ClueId
+        {
+            day1_arm_injection,
+            day1_finger_scratch,
+            day1_head_injury,
+            
         }
 
     }

@@ -5,7 +5,7 @@ using DesignPattern;
 using Scenes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Util;
+using Utility;
 
 namespace Managers
 {

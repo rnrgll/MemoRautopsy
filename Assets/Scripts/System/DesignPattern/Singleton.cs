@@ -9,31 +9,17 @@ namespace DesignPattern
     {
         private static T _instance;
 
-        public static T Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    //싱글톤이 초기화된 상태에서 다른 객체가 참고하고자 한다면
-                    _instance = FindObjectOfType<T>();
-                    DontDestroyOnLoad(_instance);
-                }
-                return _instance;
-            }
-        }
+        public static T Instance => _instance;
 
         protected void SingletonInit()
         {
             if (_instance != null && _instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
-            else
-            {
-                _instance = this as T; //싱글톤을 Generic Type으로 전환하기
-                DontDestroyOnLoad(_instance);
-            }
+
+            _instance = this as T;
         }
         
     }

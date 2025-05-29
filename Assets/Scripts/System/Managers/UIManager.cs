@@ -31,13 +31,10 @@ namespace Managers
 		}
 
 		// UI 활성화 여부
-		public ObservableProperty<bool> IsUIActive;
-		public event Action OnAllUIClosed;
+		public ObservableProperty<bool> IsUIActive= new ();
 
-		private void OnDestroy()
-		{
-			OnAllUIClosed = null;
-		}
+		private void Awake() => SingletonInit();
+
 
 		public void SetCanvas(GameObject uiGameObject)
 		{
@@ -73,15 +70,20 @@ namespace Managers
 			_UIStack.Push(ui);
 
 
+			IsUIActive.Value = true;
+			
 			return ui;
 		}
 
 		public T ShowUI<T>(BaseUI uiPrefab) where T : BaseUI
 		{
-			if (uiPrefab) return null;
+			Debug.Log(uiPrefab.gameObject.name);
+			if (uiPrefab == null) return null;
 			T ui = Instantiate(uiPrefab, RootUI.transform).GetComponent<T>();
 			_UIStack.Push(ui);
 
+			IsUIActive.Value = true;
+			
 			return ui;
 		}
 
@@ -98,6 +100,8 @@ namespace Managers
 			Destroy(popUI.gameObject);
 			_order--;
 
+			if (_UIStack.Count == 0)
+				IsUIActive.Value = false;
 
 		}
 
@@ -105,7 +109,7 @@ namespace Managers
 		{
 			while (_UIStack.Count != 0)
 				CloseUI(_UIStack.Peek());
-
+			
 			Debug.Log("열려있는 UI를 모두 닫았습니다.");
 		}
 	}

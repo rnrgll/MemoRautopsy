@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Interfaces;
 using UnityEngine;
-using Util;
+using Utility;
 
 namespace Content.Interactable
 {

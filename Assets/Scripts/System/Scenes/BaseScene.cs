@@ -1,5 +1,5 @@
 using UnityEngine;
-using Util;
+using Utility;
 
 namespace Scenes
 {

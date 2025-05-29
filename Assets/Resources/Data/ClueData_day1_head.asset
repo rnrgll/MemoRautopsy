@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: ClueData_day1_head
+  m_EditorClassIdentifier: 
+  clueId: day1_head_injury
+  title: "\uBA38\uB9AC \uB4A4\uCABD\uC758 \uC0C1\uCC98"
+  description: "\uBB34\uC5B8\uAC00\uC5D0 \uC138\uAC8C \uBD80\uB52A\uD78C \uB4EF\uD55C
+    \uD754\uC801\uC774 \uC788\uB2E4."
+  playerThoughts: "\uC5B4\uB514\uC5D0 \uBA38\uB9AC\uB97C \uBD80\uB52A\uD78C \uAC74\uAC00?
+    \uC774 \uC0C1\uCC98\uAC00 \uC0AC\uB9DD\uACFC \uC9C1\uC811\uC801\uC778 \uAD00\uB828\uC774
+    \uC788\uB294 \uAC78\uAE4C?"
+  clueImage: {fileID: 0}

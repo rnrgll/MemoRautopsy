@@ -8,6 +8,7 @@ namespace Content.Interactable
         public string clueId;
         public string title;
         public string description;
+        public string playerThoughts;
         public Sprite clueImage;
     }
 }

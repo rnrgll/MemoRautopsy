@@ -6,13 +6,24 @@ namespace Managers
 {
     public class InteractionManager : MonoBehaviour
     {
+        
+        public bool IsControlActive { get; set; } = true; //제어
+        
         private Vector3 rayOrigin;
         private IInteractable currentTarget;
-        [SerializeField] private LayerMask targetLayer;
         
-        //Ray를 쏜다(마우스 포인터 기준으로)
+        
+        [SerializeField] private LayerMask targetLayer;
+
+
+        private void OnEnable() => SubscribeEvents();
+        private void OnDisable() => UnsubscribeEvents();
+
+
         private void Update()
         {
+            if (!IsControlActive) return;
+            
             currentTarget = ShootRay();
             
 
@@ -24,6 +35,8 @@ namespace Managers
             
         }
 
+        
+        //Ray를 쏜다(마우스 포인터 기준으로)
         private IInteractable ShootRay()
         {
             Vector3 screenPosition = Input.mousePosition;
@@ -45,7 +58,19 @@ namespace Managers
         
         
         
-        
-        
+        private void SubscribeEvents()
+        {
+            Debug.Log("subscribe호출");
+           Manager.UI.IsUIActive.Subscribe(SetControlActive);
+        }
+
+        private void UnsubscribeEvents()
+        {
+           Manager.UI.IsUIActive.Unsubscribe(SetControlActive);
+        }
+
+        private void SetControlActive(bool value) => IsControlActive = !value;
+
+
     }
 }
