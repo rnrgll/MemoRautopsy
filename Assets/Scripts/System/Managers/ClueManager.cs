@@ -13,9 +13,7 @@ namespace Managers
     {
         [SerializeField] private ClueUI _clueUIPrefab;
         [SerializeField] private float _delay = 1.5f;
-        //테스트용 변수 ---
-        [SerializeField] private ClueData testData;
-
+        
         private ClueObject _currentClue;
         
         private void Awake() => SingletonInit();
@@ -24,8 +22,7 @@ namespace Managers
         {
             _currentClue = clueObject;
             
-            //todo: 데이터 찾아서 넘겨주기
-            ClueData clueData = testData;
+            ClueData clueData = Manager.Data.Clue.GetClueData(_currentClue.ClueId);
             
             //카메라 켜기
             _currentClue.VirtualCamera.gameObject.SetActive(true);
@@ -37,7 +34,6 @@ namespace Managers
 
         public void CloseClueUI(ClueUI ui, Define.ClueId requestClueId)
         {
-            Debug.Log($"{requestClueId}, {_currentClue.ClueId.ToString()} ");
             if (requestClueId == _currentClue.ClueId)
             {
                 Manager.UI.CloseUI(ui);
