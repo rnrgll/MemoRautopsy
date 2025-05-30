@@ -97,9 +97,9 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 1
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!1 &3426646066461424902
 GameObject:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 6082909554749663826}
   m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 1
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: 0
   m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
@@ -360,11 +360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uD50C\uB808\uC774\uC5B4\uC758 \uC0DD\uAC01, \uC758\uC2EC, \uCD94\uB9AC
-    \uB4F1\uC758 \uB0B4\uC6A9\uC774 \uB4E4\uC5B4\uAC04\uB2E4. \uD50C\uB808\uC774\uC5B4\uC758
-    \uC0DD\uAC01, \uC758\uC2EC, \uCD94\uB9AC \uB4F1\uC758 \uB0B4\uC6A9\uC774 \uB4E4\uC5B4\uAC04\uB2E4.
-    \uD50C\uB808\uC774\uC5B4\uC758 \uC0DD\uAC01, \uC758\uC2EC, \uCD94\uB9AC \uB4F1\uC758
-    \uB0B4\uC6A9\uC774 \uB4E4\uC5B4\uAC04\uB2E4. \uD50C\uB808\uC774\uC5B4\uC758 \uC0DD\uAC01,
-    \uC758\uC2EC, \uCD94\uB9AC \uB4F1\uC758 \uB0B4\uC6A9\uC774 \uB4E4\uC5B4\uAC04\uB2E4."
+    \uB4F1\uC758 \uB0B4\uC6A9\uC774 \uB4E4\uC5B4\uAC04\uB2E4. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 603c3d8609de64b03a977603127d6906, type: 2}
   m_sharedMaterial: {fileID: 4810842143971915854, guid: 603c3d8609de64b03a977603127d6906,
@@ -515,8 +511,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uB2E8\uC11C \uC124\uBA85\uC774 \uB4E4\uC5B4\uAC04\uB2E4.\uB2E8\uC11C
-    \uC124\uBA85\uC774 \uB4E4\uC5B4\uAC04\uB2E4.\uB2E8\uC11C \uC124\uBA85\uC774 \uB4E4\uC5B4\uAC04\uB2E4.\uB2E8\uC11C
-    \uC124\uBA85\uC774 \uB4E4\uC5B4\uAC04\uB2E4.\n\uB2E8\uC11C \uB2E8\uC11C \uC124\uBA85"
+    \uC124"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 603c3d8609de64b03a977603127d6906, type: 2}
   m_sharedMaterial: {fileID: 4810842143971915854, guid: 603c3d8609de64b03a977603127d6906,

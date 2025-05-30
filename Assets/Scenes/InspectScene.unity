@@ -1017,7 +1017,7 @@ PrefabInstance:
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 73
+      value: 460.5
       objectReference: {fileID: 0}
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}
@@ -2079,7 +2079,7 @@ PrefabInstance:
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 73
+      value: 460.5
       objectReference: {fileID: 0}
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}
@@ -3763,13 +3763,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2963266538496983926, guid: b6b2d2a7adad5cb47b79c7939bdd5979,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 820512728}
+    - target: {fileID: 2963266538496983926, guid: b6b2d2a7adad5cb47b79c7939bdd5979,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2963266538496983926, guid: b6b2d2a7adad5cb47b79c7939bdd5979,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenFirstTab
+      value: ToggleUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963266538496983926, guid: b6b2d2a7adad5cb47b79c7939bdd5979,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Content.UI.ClueNoteUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2963266538496983926, guid: b6b2d2a7adad5cb47b79c7939bdd5979,
         type: 3}
@@ -4452,7 +4462,7 @@ PrefabInstance:
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 73
+      value: 460.5
       objectReference: {fileID: 0}
     - target: {fileID: 2595091843760727585, guid: 803a3d9b992274b01922b7fbe93b4a76,
         type: 3}

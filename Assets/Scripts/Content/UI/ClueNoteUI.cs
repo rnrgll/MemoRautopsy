@@ -26,6 +26,8 @@ namespace Content.UI
         [SerializeField] private Transform _poolTransform;
         [SerializeField] private MainPanelManager _targetPanel;
         
+        //디버깅용--
+        [SerializeField] private List<ClueData> _clueDataByDay = new();
         
         private ObjectPool _clueBtnPool;
         private ClueButton _selectedBtn;
@@ -33,8 +35,11 @@ namespace Content.UI
         private Animator _targetPanelAnim;
         
         
+        public bool IsControlActive { get; set; } = true; //제어
         
-        [SerializeField] private List<ClueData> _clueDataByDay = new();
+        private void OnEnable() => SubscribeEvents();
+        private void OnDisable() => UnsubscribeEvents();
+
         
         //public ObservableProperty<int> clikedDay = new();
         private int _clickedDay = 0;
@@ -140,6 +145,7 @@ namespace Content.UI
 
         public void ToggleUI()
         {
+            if(!IsControlActive) return;
             if (_targetPanelCG.alpha == 0)
             {
                 if (ClickedDay == 0) ClickedDay = 1;
@@ -151,5 +157,21 @@ namespace Content.UI
             }
             else _targetPanelAnim.Play("Panel Out");
         }
+        
+        
+            
+        private void SubscribeEvents()
+        {
+            Debug.Log("subscribe호출");
+            Manager.UI.IsUIActive.Subscribe(SetControlActive);
+        }
+
+        private void UnsubscribeEvents()
+        {
+            Manager.UI.IsUIActive.Unsubscribe(SetControlActive);
+        }
+
+        private void SetControlActive(bool value) => IsControlActive = !value;
+
     }
 }
