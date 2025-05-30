@@ -27,9 +27,21 @@ namespace Managers
             //카메라 켜기
             _currentClue.VirtualCamera.gameObject.SetActive(true);
             
+            //단서 추가해주기
+            bool hasClue = Manager.Data.ClueCollection.HasClue(clueData.clueId);
+            if (!hasClue)
+            {
+                Manager.Data.ClueCollection.CollectClue(clueData.day, clueData.clueId);
+                PrintColleciton(); //test code
+            }
+            
             
             //UI 켜기
             StartCoroutine(ShowClueAfterDelay(_delay, clueData));
+            
+           
+            
+            
         }
 
         public void CloseClueUI(ClueUI ui, Define.ClueId requestClueId)
@@ -51,5 +63,19 @@ namespace Managers
             ClueUI ui = Manager.UI.ShowUI<ClueUI>(_clueUIPrefab);
             ui.SetData(clueData);
         }
+
+        //test-----
+        private void PrintColleciton()
+        {
+            var lists = Manager.Data.ClueCollection.GetCluesByDay(1);
+            foreach (var clueId in lists)
+            {
+                Debug.Log(clueId.ToString());
+            }
+        }
     }
+    
+    
+    
+    
 }

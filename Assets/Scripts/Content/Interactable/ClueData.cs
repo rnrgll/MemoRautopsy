@@ -7,6 +7,7 @@ namespace Content.Interactable
     public class ClueData : ScriptableObject
     {
         public Define.ClueId clueId;
+        public int day;
         public string title;
         public string description;
         public string playerThoughts;

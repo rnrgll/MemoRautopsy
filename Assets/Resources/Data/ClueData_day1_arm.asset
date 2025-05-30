@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ClueData_day1_arm
   m_EditorClassIdentifier: 
   clueId: 0
+  day: 1
   title: "\uC8FC\uC0AC \uC790\uAD6D"
   description: "\uD314 \uC548\uCABD\uC5D0 \uC57D\uBB3C\uC774 \uC8FC\uC785\uB41C \uB4EF\uD55C
     \uD478\uB978 \uBA4D \uC790\uAD6D\uC774 \uC788\uB2E4."
