@@ -8,7 +8,7 @@ namespace Content.UI
     {
         private void Awake() => Init();
 
-        private void Init()
+        protected virtual void Init()
         {
             Manager.UI.SetCanvas(gameObject);
         }

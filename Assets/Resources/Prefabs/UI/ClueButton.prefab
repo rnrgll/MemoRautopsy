@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 2209351879875064731}
   - component: {fileID: 5799621178514527364}
   - component: {fileID: 2756340306792387615}
+  - component: {fileID: 8286423435457384610}
   m_Layer: 5
   m_Name: ClueButton
   m_TagString: Untagged
@@ -527,9 +528,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Content.UI.ClueNoteUI, Assembly-CSharp
-        m_MethodName: SetClueNoteData
+      - m_Target: {fileID: 8286423435457384610}
+        m_TargetAssemblyTypeName: Content.UI.ClueButton, Assembly-CSharp
+        m_MethodName: ClickTest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -653,3 +654,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8286423435457384610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882190931372958404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdb2227a08e43c09aee84b13c5467f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btnImg: {fileID: 1494272760608843683}
+  _anim: {fileID: 0}
+  IsSelected:
+    _value: 0
