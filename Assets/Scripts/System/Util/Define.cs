@@ -45,6 +45,9 @@ namespace Utility
             day1_arm_injection,
             day1_finger_scratch,
             day1_head_injury,
+            day2_hand_paper,
+            day2_mouth_injury,
+            day2_neck_injection,
             
         }
 

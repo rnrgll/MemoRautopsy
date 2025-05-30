@@ -32,7 +32,7 @@ namespace Managers
             if (!hasClue)
             {
                 Manager.Data.ClueCollection.CollectClue(clueData.day, clueData.clueId);
-                PrintColleciton(); //test code
+                PrintColleciton(clueData.day); //test code
             }
             
             
@@ -65,9 +65,9 @@ namespace Managers
         }
 
         //test-----
-        private void PrintColleciton()
+        private void PrintColleciton(int day)
         {
-            var lists = Manager.Data.ClueCollection.GetCluesByDay(1);
+            var lists = Manager.Data.ClueCollection.GetCluesByDay(day);
             foreach (var clueId in lists)
             {
                 Debug.Log(clueId.ToString());

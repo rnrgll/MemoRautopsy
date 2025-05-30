@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: ClueData_day2_neck
+  m_EditorClassIdentifier: 
+  clueId: 5
+  day: 2
+  title: "\uBAA9\uB35C\uBBF8 \uC8FC\uC0AC \uC790\uAD6D"
+  description: "\uBAA9 \uB4A4\uCABD\uC5D0 \uB0A0\uCE74\uB85C\uC6B4 \uBC14\uB298 \uC790\uAD6D\uC774
+    \uD558\uB098 \uB098 \uC788\uB2E4. \uD53C\uBD80\uAC00 \uBD89\uAC8C \uBD80\uC5B4
+    \uC788\uB2E4."
+  playerThoughts: "\uC774 \uC8FC\uC0AC \uC790\uAD6D\u2026 \uB2E4\uB2C8\uC5D8 \uB54C\uC640
+    \uB611\uAC19\uC544 \uBCF4\uC5EC. \uC5D0\uBC00\uB9AC\uB3C4 \uAC19\uC740 \uC57D\uBB3C,
+    \uAC19\uC740 \uBC29\uC2DD\uC73C\uB85C\u2026 \uC0B4\uD574\uB2F9\uD55C \uAC78\uAE4C?"
+  clueImage: {fileID: 21300000, guid: 315296d2c70944c998355321fd123b0c, type: 3}
