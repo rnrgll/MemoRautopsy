@@ -11,12 +11,11 @@ using Utility;
 
 public class ClueObject : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Define.ClueId _clueID;
-    [SerializeField] private float _delay = 1.5f;
-    
+    [field: SerializeField] public Define.ClueId ClueId { get; private set; }
+    [field: SerializeField] public CinemachineVirtualCamera VirtualCamera { get; private set; }
     
     [SerializeField] private string interactText;
-    [SerializeField] private CinemachineVirtualCamera _virtualcam;
+   
     private Define.Scene connectScene;
 
     
@@ -29,19 +28,7 @@ public class ClueObject : MonoBehaviour, IInteractable
     {
         
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     string IInteractable.InteractText
     {
         get => interactText;
@@ -56,17 +43,9 @@ public class ClueObject : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log($"{_clueID} 발견");
-        _virtualcam.gameObject.SetActive(true);
-
-        StartCoroutine(ShowClueAfterDelay(_delay));
-        //todo: cluemanager
-
+        Debug.Log($"{ClueId} 발견");
+        ClueManager.Instance.ShowClueUI(this);
+        
     }
-
-    IEnumerator ShowClueAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        ClueManager.Instance.ShowClue(_clueID);
-    }
+    
 }

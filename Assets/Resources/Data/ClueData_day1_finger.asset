@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
   m_Name: ClueData_day1_finger
   m_EditorClassIdentifier: 
-  clueId: day1_finger_scratch
+  clueId: 1
+  day: 1
   title: "\uC190\uB05D\uC758 \uC0C1\uCC98"
   description: "\uC190\uAC00\uB77D \uB05D\uC5D0 \uAE01\uD78C \uC790\uAD6D\uC774 \uB0A8\uC544
     \uC788\uB2E4."
