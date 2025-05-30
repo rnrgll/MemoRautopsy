@@ -13,7 +13,7 @@ namespace Scenes
         
         protected override void Init()
         {
-            base.SceneType = Define.SceneType.Inspect;
+            base.SceneType = Define.SceneType.Main;
             base.Init();
             
             SetStartPosition();

@@ -11,8 +11,8 @@ namespace Content.Interactable
         public Define.ClueId clueId;
         public int day;
         public string title;
-        public string description;
-        public string playerThoughts;
+        [TextArea(2,5)] public string description;
+        [TextArea(2,5)]  public string playerThoughts;
         public Sprite clueImage;
     }
 }

@@ -33,6 +33,7 @@ namespace Utility
         public enum SceneType
         {
             Unknown,
+            Home,
             Main,
             Inspect,
             Memory,
