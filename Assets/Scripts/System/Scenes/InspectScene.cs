@@ -15,8 +15,13 @@ namespace Scenes
             SceneType = Define.SceneType.Inspect;
             //todo: day를 플레이어 진행상황에 맞게 가져오기
             
-            LoadBodyDummy();
+            //LoadBodyDummy();
             
+        }
+
+        public override void OnEnterScene()
+        {
+            LoadBodyDummy();
         }
 
         private void LoadBodyDummy()
@@ -31,7 +36,7 @@ namespace Scenes
         
         
 
-        public override void Clear()
+        public override void OnExitScene()
         {
             
         }

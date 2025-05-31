@@ -41,24 +41,40 @@ namespace Managers
         //씬 전환
         public void LoadScene(Define.Scene scene)
         {
+            //현재 씬 exit
+            CurrentScene?.OnExitScene();
+            
+            //새 씬 로드
             SceneManager.LoadScene(GetSceneName(scene));
+            
+            //다음 프레임에서 OnEnter 호출
+            //즉시하는 경우 새 씬의 Awake보다 빨라서 안됨
+            StartCoroutine(WaitEnterNextScene());
         }
 
         //씬 비동기 전환
-        public void AsncLoadScene(Define.Scene scene, float delay, bool useEffect = false, int loadSceneMode = 1)
+        /// <summary>
+        /// 비동기 씬 전환
+        /// </summary>
+        /// <param name="scene"></param>
+        /// <param name="effectDelay"></param>
+        /// <param name="useEffect"></param>
+        /// <param name="loadSceneMode">Single(0) : Closes all current loaded Scenes and loads a Scene. / Additive(1) : Adds the Scene to the current loaded Scenes. </param>
+        public void AsncLoadScene(Define.Scene scene, float effectDelay, bool useEffect = false, int loadSceneMode = 1)
         {
             StartCoroutine(CoLoadScene());
             
             
             IEnumerator CoLoadScene()
             {
+                CurrentScene?.OnExitScene();
                 
                 if (useEffect && effectPanels.Count > 0)
                 {
                     yield return StartCoroutine(EffectIn(0));
                 }
                 
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(effectDelay);
                 
                 AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(GetSceneName(scene), (LoadSceneMode)loadSceneMode);
                 asyncOperation.allowSceneActivation = false;
@@ -70,22 +86,23 @@ namespace Managers
                 
                 asyncOperation.allowSceneActivation = true;
                 
-                yield return null; //씬 전환 기다렸다가 effect in 처리
-
+                yield return null; //씬 전환 기다리기
+                
+                //fade 효과
                 if (useEffect)
                 {
                     yield return StartCoroutine(EffectOut());
                 }
                 
+                //씬 진입 초기화
+                Debug.Log(CurrentScene.SceneType.ToString());
+                CurrentScene?.OnEnterScene();
+                
             }
         }
+
+        #region Coroutine
         
-        //씬 전환시 초기화 및 방지할 것들
-
-        //씬 전환 후에 다시 활성화 시키기
-        
-
-
         private IEnumerator EffectIn(int panelIndex)
         {
       
@@ -118,9 +135,17 @@ namespace Managers
             
             currentPanel = null;
         }
-        
-        
 
+
+        private IEnumerator WaitEnterNextScene()
+        {
+            yield return null; //다음 프레임까지 대기
+            
+            Debug.Log(CurrentScene.SceneType.ToString());
+            CurrentScene?.OnEnterScene();
+        }
+        
+        #endregion
     }
 }
 

@@ -16,20 +16,23 @@ namespace Scenes
             base.SceneType = Define.SceneType.Main;
             base.Init();
             
-            SetStartPosition();
+           
             
         }
-
+        public override void OnEnterScene()
+        {
+            base.OnEnterScene();
+            SetStartPosition();
+        }
         private void SetStartPosition()
         {
             //todo: 스토리 진행에 따라 스타트 포지션 변경해주기
-
             _player.transform.position = _startPosition[0].position;
-
         }
 
-        public override void Clear()
+        public override void OnExitScene()
         {
+            base.OnExitScene();
             //todo: clear구현
         }
     }
