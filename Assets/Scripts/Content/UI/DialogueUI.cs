@@ -1,0 +1,142 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Event;
+using Managers;
+using TMPro;
+using UnityEngine;
+using Utility;
+
+namespace Content.UI
+{
+    public class DialogueUI : BaseUI
+    {
+        [Header("UI")]
+        [SerializeField] private TMP_Text nameTxt;
+        [SerializeField] private TMP_Text lineText;
+        [SerializeField] private GameObject nameBox;
+        
+        
+        [Header("Typing Control")]
+        [SerializeField] private float typeSpeed = 0.04f;
+
+        [SerializeField] private KeyCode nextKey1 = KeyCode.Space;
+        [SerializeField] private KeyCode nextKey2 = KeyCode.Mouse0;
+        
+        private List<string> _dialogueLines;
+        private List<DialogueBlock> _dialogueBlocks;
+
+        private CanvasGroup cg;
+        private Action OnComplete;
+        private WaitUntil waitKeyInput;
+
+        protected override void Init()
+        {
+            base.Init();
+            cg = GetComponent<CanvasGroup>();
+            _dialogueLines = new();
+            OnComplete = null;
+            waitKeyInput = new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
+            
+        }
+
+        private void OnDisable()
+        {
+            OnComplete = null;
+        }
+
+        public void SetData(List<string> dialougeLines, Action onComplete)
+        {
+            _dialogueLines = dialougeLines;
+            OnComplete = onComplete;
+        }
+        public void SetData(List<DialogueBlock> dialogueBlocks, Action onComplete)
+        {
+            _dialogueBlocks = dialogueBlocks;
+            OnComplete = onComplete;
+        }
+        
+        /// <summary>
+        /// 나래이션 시작
+        /// </summary>
+        public void PlayNarration()
+        {
+            nameTxt.gameObject.SetActive(true);
+            StartCoroutine(RunDialogue());
+        }
+
+        public void PlayDialogue()
+        {
+            StartCoroutine(RunDialogueBlock());
+        }
+        
+        
+        private IEnumerator RunDialogue()
+        {
+            if(_dialogueLines==null || _dialogueLines.Count ==0) 
+                yield break;
+            
+            Util.UIEnable(cg);
+            nameBox.SetActive(false);
+            
+            foreach (string line in _dialogueLines)
+            {
+                yield return StartCoroutine(TypeLine(line));
+            }
+            
+            Util.UIDisable(cg);
+            
+            yield return new WaitForSeconds(0.1f); // 약간의 텀
+            
+            OnComplete?.Invoke();
+        }
+        
+        private IEnumerator RunDialogueBlock()
+        {
+            if(_dialogueBlocks==null || _dialogueBlocks.Count ==0) 
+                yield break;
+
+            Util.UIEnable(cg);
+            nameBox.SetActive(true);
+            foreach (DialogueBlock block in _dialogueBlocks)
+            {
+                nameTxt.text = block.speakerName;
+
+                foreach (string line in block.lines)
+                {
+                    yield return StartCoroutine(TypeLine(line));
+                }
+                
+            }
+            
+            Util.UIDisable(cg);
+            
+            yield return new WaitForSeconds(0.1f); // 약간의 텀
+            
+            OnComplete?.Invoke();
+        }
+        
+
+        private IEnumerator TypeLine(string line)
+        {
+            lineText.text = "";
+            for (int i = 0; i < line.Length; i++)
+            {
+                
+                if (Input.GetKeyDown(nextKey1) || Input.GetKeyDown(nextKey2))
+                {
+                    //스킵
+                    lineText.text = line;
+                    break;
+                }
+
+                lineText.text = $"{lineText.text}{line[i]}";
+                
+                yield return new WaitForSeconds(typeSpeed);
+            }
+            
+            //키 입력 대기
+            yield return waitKeyInput;
+        }
+    }
+}

@@ -1045,7 +1045,7 @@ PrefabInstance:
     - target: {fileID: 7475430499891947403, guid: 713e3c8f7b6ba604ba40ffcc00107e62,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1
+      value: 2.0279999
       objectReference: {fileID: 0}
     - target: {fileID: 7475430499891947403, guid: 713e3c8f7b6ba604ba40ffcc00107e62,
         type: 3}
@@ -2049,6 +2049,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  rayLength: 4
 --- !u!4 &757512601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4317822196210594216, guid: 510d2f333e87aa94184506a6816662b5,
@@ -2160,7 +2161,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1602568225592775945, guid: caccf880f2719ca4d8ed40c6517703bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 821500433}
   m_SourcePrefab: {fileID: 100100000, guid: caccf880f2719ca4d8ed40c6517703bc, type: 3}
 --- !u!4 &786708379 stripped
 Transform:
@@ -2228,6 +2233,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1913697292592691593}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &821500427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1602568225592775945, guid: caccf880f2719ca4d8ed40c6517703bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 777424193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &821500433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821500427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9b037f2c7941c7a34751a1f96d28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequence: {fileID: 11400000, guid: bcd09f5786c2c4996b1d4dbd1c69118a, type: 2}
 --- !u!4 &826187217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7530338503389077380, guid: c634e9241658a7c46ad886d712d72605,

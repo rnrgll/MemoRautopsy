@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Content.UI;
 using DesignPattern;
+using Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -16,8 +17,8 @@ namespace Managers
 		private int _order = 50;
 
 		//공통 UI
-		private GameObject sharedUIInstance;
-		[SerializeField] private GameObject sharedUIPrefab;
+		private SharedUI sharedUI;
+		[SerializeField] private SharedUI sharedUIPrefab;
 		
 		//ui 오브젝트 풀
 		private ObjectPool _interactUIPool;
@@ -66,6 +67,9 @@ namespace Managers
 			_interactUIPool = new ObjectPool(_interactUIPrefab, _poolTransform );
 			_interactUIPool.Init(5);
 			
+			
+			//테스트
+			CreateSharedUI();
 		}
 		
 		public void SetCanvas(GameObject uiGameObject)
@@ -144,20 +148,20 @@ namespace Managers
 			Debug.Log("열려있는 UI를 모두 닫았습니다.");
 		}
 
-		public GameObject CreateSharedUI()
+		public SharedUI CreateSharedUI()
 		{
-			if (sharedUIInstance != null) return null;
-			sharedUIInstance = Instantiate(sharedUIPrefab);
-			sharedUIInstance.transform.SetParent(this.transform);
-			return sharedUIInstance;
+			if (sharedUI != null) return null;
+			sharedUI = Instantiate(sharedUIPrefab);
+			sharedUI.transform.SetParent(this.transform);
+			return sharedUI;
 		}
 
 		public void DestroySharedUI()
 		{
-			if(sharedUIInstance==null) return;
+			if(sharedUI==null) return;
 			
-			Destroy(sharedUIInstance);
-			sharedUIInstance = null;
+			Destroy(sharedUI.gameObject);
+			sharedUI = null;
 		}
 
 		public InteractUI ShowInteractUI(Transform transform)
@@ -169,5 +173,41 @@ namespace Managers
 
 			return ui;
 		}
+
+		public DialogueUI ShowDialouge(List<string> dialougeLines, Action onComplete=null)
+		{
+			IsUIActive.Value = true;
+			
+			//데이터 셋팅
+			sharedUI.Dialogue.SetData(dialougeLines, onComplete);
+			//시작하기
+			sharedUI.Dialogue.PlayNarration();
+
+			return sharedUI.Dialogue;
+		}
+		
+		public DialogueUI ShowDialouge(List<DialogueBlock> dialogueBlocks, Action onComplete=null)
+		{
+			//콜백 추가
+			Action onEndDialogue = () =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke();
+			};
+			
+			
+            IsUIActive.Value = true;
+			
+			
+			//데이터 셋팅
+			sharedUI.Dialogue.SetData(dialogueBlocks, onEndDialogue);
+			//시작하기
+			sharedUI.Dialogue.PlayDialogue();
+
+			return sharedUI.Dialogue;
+		}
+		
 	}
 }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7ed7d9b9694aa59bc3057a5111e1f4, type: 3}
+  m_Name: Narration_Test
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "\uB098\uB808\uC774\uC158 \uD14C\uC2A4\uD2B8 \uC2DC\uC791\uD569\uB2C8\uB2E4."
+  - "\uCCAB\uBC88\uC9F8 \uB098\uB808\uC774\uC158 eventStep\uC785\uB2C8\uB2E4."
+  - "\uCCAB\uBC88\uC9F8 \uB098\uB808\uC774\uC158 eventStep\uC744 \uC885\uB8CC\uD569\uB2C8\uB2E4."

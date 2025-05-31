@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Interfaces;
 using Content.UI;
+using Event;
 using Managers;
 using UnityEngine;
 using Utility;
@@ -31,7 +32,7 @@ namespace Content.Interactable
         public void Interact()
         {
             //진짜 상호작용을 구현한다.
-            Debug.Log("sdfsf");
+            GetComponent<TriggerEventObject>().Trigger();
         }
 
       

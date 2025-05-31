@@ -11,6 +11,7 @@ namespace Managers
         public static SceneManagerEx Scene => SceneManagerEx.Instance;
         public static UIManager UI => UIManager.Instance;
         public static DataManager Data => DataManager.Instance;
+        public static EventSystemManager Event => EventSystemManager.Instance;
         
         
         
