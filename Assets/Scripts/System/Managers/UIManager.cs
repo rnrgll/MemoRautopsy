@@ -19,6 +19,10 @@ namespace Managers
 		private GameObject sharedUIInstance;
 		[SerializeField] private GameObject sharedUIPrefab;
 		
+		//ui 오브젝트 풀
+		private ObjectPool _interactUIPool;
+		[SerializeField] private InteractUI _interactUIPrefab;
+		[SerializeField] private Transform _poolTransform;
 		
 		public GameObject RootUI
 		{
@@ -53,9 +57,17 @@ namespace Managers
 
 		
 		//-----
-		private void Awake() => SingletonInit();
+		private void Awake() => Init();
 
+		private void Init()
+		{
+			SingletonInit();
 
+			_interactUIPool = new ObjectPool(_interactUIPrefab, _poolTransform );
+			_interactUIPool.Init(5);
+			
+		}
+		
 		public void SetCanvas(GameObject uiGameObject)
 		{
 			Canvas canvas = uiGameObject.GetComponent<Canvas>();
@@ -146,6 +158,16 @@ namespace Managers
 			
 			Destroy(sharedUIInstance);
 			sharedUIInstance = null;
+		}
+
+		public InteractUI ShowInteractUI(Transform transform)
+		{
+			InteractUI ui = _interactUIPool.Get() as InteractUI;
+			ui.transform.position = transform.position;
+			ui.transform.SetParent(transform);
+			ui.SetCamera();
+
+			return ui;
 		}
 	}
 }

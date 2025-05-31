@@ -23,6 +23,7 @@ namespace Player
         private void OnDisable() => UnsubscribeEvents();
 
         
+        //초기 설정 및 셋팅 ------
         private void Init()
         {
             _status = GetComponent<PlayerStatus>();
@@ -33,6 +34,14 @@ namespace Player
 
         }
 
+        public void SetInitRotation(Vector3 eulerAngle)
+        {
+            _movement.SetInitRotation(eulerAngle);
+        }
+        
+
+        
+        // 컨트롤 ----------
         private void HandlePlayerControl()
         {
             if (!IsControlActive) return;
@@ -52,6 +61,7 @@ namespace Player
         }
         
         
+        //프로퍼티 구독 -----
         private void SubscribeEvents()
         {
             Manager.UI.IsUIActive.Subscribe(SetControlActive);
@@ -69,6 +79,9 @@ namespace Player
             // _status.IsControlActive.Unsubscribe(SetMoveStop);
         }
 
+        
+        //property 구독
+        //플레이어 컨트롤 관련 메서드
         private void SetControlActive(bool value)
         {
             IsControlActive = !value;

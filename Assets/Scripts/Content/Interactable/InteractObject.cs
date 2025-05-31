@@ -1,0 +1,39 @@
+using System.Collections.Generic;
+using System.Interfaces;
+using Content.UI;
+using Managers;
+using UnityEngine;
+using Utility;
+
+namespace Content.Interactable
+{
+    //triggerObject
+    //interactObject
+    public class InteractObject : MonoBehaviour, IInteractable, IUIInteractable
+    {
+        [SerializeField] private List<string> _infoList;
+        [SerializeField] private Transform _uiAnchor;
+        
+        private Define.Scene connectScene;
+        
+        public string InteractText { get; }
+        public Transform GetUIPosition()
+        {
+            return _uiAnchor;
+        }
+        
+        Define.Scene IInteractable.ConnectScene
+        {
+            get => connectScene;
+            set => connectScene = value;
+        }
+
+        public void Interact()
+        {
+            //진짜 상호작용을 구현한다.
+            Debug.Log("sdfsf");
+        }
+
+      
+    }
+}
