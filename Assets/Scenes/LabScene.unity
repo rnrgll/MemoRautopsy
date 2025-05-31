@@ -2500,6 +2500,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1418071370828552020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1039373700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7871796017639434943, guid: 13da9dd93a9ee421f8e902bfa7535ff5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1459289517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1041286239 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3915395095622419872, guid: ec6b892b5fd979448bb14dd1d9d3b571,
@@ -3303,6 +3315,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7042287488625457811, guid: 13da9dd93a9ee421f8e902bfa7535ff5,
+        type: 3}
+      propertyPath: _sightCamera
+      value: 
+      objectReference: {fileID: 1039373700}
     - target: {fileID: 7842123350354448444, guid: 13da9dd93a9ee421f8e902bfa7535ff5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4592,6 +4609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74af408a06674a48a9ae8bb8fedce040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScenes: 
   _startPosition:
   - {fileID: 4708383443686608668}
   _player: {fileID: 748781413}

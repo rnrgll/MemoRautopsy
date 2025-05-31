@@ -48,6 +48,8 @@ MonoBehaviour:
   CurrentScene: {fileID: 0}
   effectPanels:
   - {fileID: 5073781953410231895}
+  PlayGameScene: 1
+  EndGameScene: 2
   animationSmoothness: 0.25
   animationSpeed: 0.8
 --- !u!1 &3930240789951592432

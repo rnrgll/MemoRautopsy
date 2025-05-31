@@ -52,12 +52,6 @@ namespace Managers
             return null;
         }
         
-        //오브젝트가 iinteractable이면 outline을 만든다
-        
-        //플레이어가 f를 누르면 interact를 호출한다.
-        
-        
-        
         private void SubscribeEvents()
         {
             Debug.Log("subscribe호출");

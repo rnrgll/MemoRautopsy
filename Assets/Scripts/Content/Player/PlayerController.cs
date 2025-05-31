@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Managers;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        //public bool IsControlActive { get; set; } = true; //제어
+        public bool IsControlActive { get; set; } = true; //제어
 
         private PlayerStatus _status;
         private PlayerMovement _movement;
@@ -16,8 +17,8 @@ namespace Player
         
         
         private void Awake() => Init();
-        private void OnEnable() => SubscribeEvents();
         private void Update() => HandlePlayerControl();
+        private void OnEnable() => SubscribeEvents();
 
         private void OnDisable() => UnsubscribeEvents();
 
@@ -27,14 +28,14 @@ namespace Player
             _status = GetComponent<PlayerStatus>();
             _movement = GetComponent<PlayerMovement>();
             _animator = GetComponent<Animator>();
-            
-            SetCursorLock(true);
+
+            SetControlActive(false); //반대로 넣어주기
 
         }
 
         private void HandlePlayerControl()
         {
-            if (!_status.IsControlActive.Value) return;
+            if (!IsControlActive) return;
             HandleMovement();
             
         }
@@ -53,19 +54,27 @@ namespace Player
         
         private void SubscribeEvents()
         {
-            _status.IsControlActive.Subscribe(SetCursorLock);
-            _status.IsControlActive.Subscribe(SetMoveStop);
+            Manager.UI.IsUIActive.Subscribe(SetControlActive);
             
-           
+            
+            // _status.IsControlActive.Subscribe(SetCursorLock);
+            // _status.IsControlActive.Subscribe(SetMoveStop);
           
         }
 
         private void UnsubscribeEvents()
         {
-            _status.IsControlActive.Unsubscribe(SetCursorLock);
-            _status.IsControlActive.Unsubscribe(SetMoveStop);
+            Manager.UI.IsUIActive.Unsubscribe(SetControlActive);
+            // _status.IsControlActive.Unsubscribe(SetCursorLock);
+            // _status.IsControlActive.Unsubscribe(SetMoveStop);
         }
 
+        private void SetControlActive(bool value)
+        {
+            IsControlActive = !value;
+            SetCursorLock(IsControlActive);
+            SetMoveStop(IsControlActive);
+        }
         private void SetCursorLock(bool value)
         {
             Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;

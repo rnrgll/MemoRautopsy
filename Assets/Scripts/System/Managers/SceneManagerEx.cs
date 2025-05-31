@@ -11,27 +11,33 @@ namespace Managers
 {
     public class SceneManagerEx : Singleton<SceneManagerEx>
     {
+        [Header("Scene Manage")]
         //현재 씬
         public BaseScene CurrentScene;
-
         //씬 전환 패널
         public List<GameObject> effectPanels = new ();
+        private GameObject currentPanel;
+        private Animator currentPanelAnimator;
+
+        [SerializeField] private Define.Scene PlayGameScene;
+        [SerializeField] private Define.Scene EndGameScene;
+        
         
         [Header("Settings")]
         [Range(0, 1)] public float animationSmoothness = 0.25f;
         [Range(0.75f, 4)] public float animationSpeed = 1;
-
-        private GameObject currentPanel;
-        private Animator currentPanelAnimator;
         
         
         //Animator 
         private int PANEL_FADEIN = Animator.StringToHash("Panel In");
         private int PANEL_FADEOUT = Animator.StringToHash("Panel Out");
 
+        //----------
         private void Awake() => SingletonInit();
 
-        //씬 이름 반환
+        #region Scene Load
+
+          //씬 이름 반환
         public string GetSceneName(Define.Scene scene)
         {
             Define.SceneNames.TryGetValue(scene, out string sceneName);
@@ -100,6 +106,22 @@ namespace Managers
                 
             }
         }
+        #endregion
+
+        #region Scene Change
+
+        public void LoadGameScene()
+        {
+            Manager.UI.CreateSharedUI();
+            AsncLoadScene(PlayGameScene, 0.5f, true, 0);
+        }
+        public void LoadEndingScene()
+        {
+            Manager.UI.DestroySharedUI();
+            AsncLoadScene(EndGameScene, 0.5f, true, 0);
+        }
+
+        #endregion
 
         #region Coroutine
         

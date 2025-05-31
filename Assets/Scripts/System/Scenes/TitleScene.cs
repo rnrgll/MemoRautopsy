@@ -25,7 +25,7 @@ namespace Scenes
 
         public void PlayGame()
         {
-            Manager.Scene.AsncLoadScene(nextScenes[0],0.1f,true,0);
+            Manager.Scene.LoadGameScene();
         }
     }
 }

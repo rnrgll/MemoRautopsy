@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd3254a3b324f279dac8c4b708ea37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharedUIPrefab: {fileID: 828175722863460812, guid: 9b7d67ab4c1ca4f76832f495082301bb,
+    type: 3}
   IsUIActive:
     _value: 0

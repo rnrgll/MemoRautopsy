@@ -15,6 +15,11 @@ namespace Managers
 		private Stack<BaseUI> _UIStack = new Stack<BaseUI>();
 		private int _order = 50;
 
+		//공통 UI
+		private GameObject sharedUIInstance;
+		[SerializeField] private GameObject sharedUIPrefab;
+		
+		
 		public GameObject RootUI
 		{
 			get
@@ -46,6 +51,8 @@ namespace Managers
 		// UI 활성화 여부
 		public ObservableProperty<bool> IsUIActive= new ();
 
+		
+		//-----
 		private void Awake() => SingletonInit();
 
 
@@ -62,7 +69,7 @@ namespace Managers
 			_order++;
 
 		}
-
+		
 		public T ShowUI<T>(string prefabPath) where T : BaseUI
 		{
 			if (string.IsNullOrEmpty(prefabPath))
@@ -123,6 +130,22 @@ namespace Managers
 				CloseUI(_UIStack.Peek());
 			
 			Debug.Log("열려있는 UI를 모두 닫았습니다.");
+		}
+
+		public GameObject CreateSharedUI()
+		{
+			if (sharedUIInstance != null) return null;
+			sharedUIInstance = Instantiate(sharedUIPrefab);
+			sharedUIInstance.transform.SetParent(this.transform);
+			return sharedUIInstance;
+		}
+
+		public void DestroySharedUI()
+		{
+			if(sharedUIInstance==null) return;
+			
+			Destroy(sharedUIInstance);
+			sharedUIInstance = null;
 		}
 	}
 }
