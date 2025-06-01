@@ -66,7 +66,7 @@ namespace Managers
         /// <param name="effectDelay"></param>
         /// <param name="useEffect"></param>
         /// <param name="loadSceneMode">Single(0) : Closes all current loaded Scenes and loads a Scene. / Additive(1) : Adds the Scene to the current loaded Scenes. </param>
-        public void AsncLoadScene(Define.Scene scene, float effectDelay, bool useEffect = false, int loadSceneMode = 1)
+        public void AsncLoadScene(Define.Scene scene, float effectDelay = 0, bool useEffect = false, int loadSceneMode = 1)
         {
             StartCoroutine(CoLoadScene());
             

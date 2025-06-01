@@ -11,8 +11,8 @@ namespace Content.UI
     {
         [SerializeField] private TMP_Text _question;
         
-        [SerializeField] private Button _optionA;
-        [SerializeField] private Button _optionB;
+        [SerializeField] private ButtonManager _optionA;
+        [SerializeField] private ButtonManager _optionB;
         
         
         private CanvasGroup cg;
@@ -27,15 +27,15 @@ namespace Content.UI
 
         private void OnEnable()
         {
-            _optionA.onClick.AddListener(()=> OnComplete?.Invoke(0));
-            _optionB.onClick.AddListener(()=> OnComplete?.Invoke(1));
+            _optionA.clickEvent.AddListener(()=> OnComplete?.Invoke(0));
+            _optionB.clickEvent.AddListener(()=> OnComplete?.Invoke(1));
 
         }
 
         private void OnDestroy()
         {
-            _optionA.onClick.RemoveAllListeners();
-            _optionB.onClick.RemoveAllListeners();
+            _optionA.clickEvent.RemoveAllListeners();
+            _optionB.clickEvent.RemoveAllListeners();
         }
 
         private void OnDisable()
@@ -46,9 +46,15 @@ namespace Content.UI
         
         public void SetData(string q, string oa, string ob, Action<int> onComplete)
         {
+            //텍스트 설정
             _question.text = q;
-            _optionA.GetComponent<ButtonManager>().buttonText = oa;
-            _optionB.GetComponent<ButtonManager>().buttonText = ob;
+            _optionA.buttonText = oa;
+            _optionB.buttonText = ob;
+            _optionA.UpdateUI();
+            _optionB.UpdateUI();
+            
+            
+            Debug.Log(_optionB.GetComponent<ButtonManager>().buttonText);
             OnComplete = (index) =>
             {
                 Util.UIDisable(cg);

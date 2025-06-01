@@ -14,7 +14,8 @@ namespace Managers
         private IInteractable currentTarget;
         private IInteractable lastTarget;
         private InteractUI currentUI;
-        
+
+        [SerializeField] private KeyCode keyCode;
         
         [SerializeField] private LayerMask targetLayer;
         [SerializeField] [Range(2f, 5f)] private float rayLength = 2f;
@@ -48,7 +49,7 @@ namespace Managers
             }
 
             //상호작용
-            if (currentTarget != null && Input.GetKeyDown(KeyCode.E))
+            if (currentTarget != null && Input.GetKeyDown(keyCode))
             {
                 currentTarget.Interact();
             }

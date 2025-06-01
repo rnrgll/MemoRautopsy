@@ -53,6 +53,9 @@ namespace Utility
             day2_hand_paper,
             day2_mouth_injury,
             day2_neck_injection,
+            day3_stomach_injection,
+            day3_mouth_chip,
+            day3_arm_burn,
             
         }
 
