@@ -178,8 +178,17 @@ namespace Managers
 		{
 			IsUIActive.Value = true;
 			
+			//콜백 추가
+			Action onEndDialogue = () =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke();
+			};
+			
 			//데이터 셋팅
-			sharedUI.Dialogue.SetData(dialougeLines, onComplete);
+			sharedUI.Dialogue.SetData(dialougeLines, onEndDialogue);
 			//시작하기
 			sharedUI.Dialogue.PlayNarration();
 
@@ -188,6 +197,8 @@ namespace Managers
 		
 		public DialogueUI ShowDialouge(List<DialogueBlock> dialogueBlocks, Action onComplete=null)
 		{
+			IsUIActive.Value = true;
+
 			//콜백 추가
 			Action onEndDialogue = () =>
 			{
@@ -207,6 +218,29 @@ namespace Managers
 			sharedUI.Dialogue.PlayDialogue();
 
 			return sharedUI.Dialogue;
+		}
+		
+		public ChoiceUI ShowChoice(string question, string optionA, string optionB, Action<int> onComplete)
+		{
+			//콜백 추가
+			Action<int> onEndDialogue = (choice) =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke(choice);
+			};
+			
+			
+			IsUIActive.Value = true;
+			
+			
+			//데이터 셋팅
+			sharedUI.Choice.SetData(question, optionA, optionB, onEndDialogue);
+			//시작하기
+			sharedUI.Choice.ShowChoice();
+
+			return sharedUI.Choice;
 		}
 		
 	}

@@ -31,6 +31,7 @@ namespace Content.Interactable
 
         public void Interact()
         {
+            Debug.Log("adfsf");
             //진짜 상호작용을 구현한다.
             GetComponent<TriggerEventObject>().Trigger();
         }

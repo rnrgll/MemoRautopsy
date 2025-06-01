@@ -29,6 +29,7 @@ namespace Content.UI
         private CanvasGroup cg;
         private Action OnComplete;
         private WaitUntil waitKeyInput;
+        private Coroutine currentRoutine;
 
         protected override void Init()
         {
@@ -61,13 +62,14 @@ namespace Content.UI
         /// </summary>
         public void PlayNarration()
         {
-            nameTxt.gameObject.SetActive(true);
-            StartCoroutine(RunDialogue());
+            if (currentRoutine != null) StopCoroutine(currentRoutine);
+            currentRoutine = StartCoroutine(RunDialogue());
         }
 
         public void PlayDialogue()
         {
-            StartCoroutine(RunDialogueBlock());
+            if (currentRoutine != null) StopCoroutine(currentRoutine);
+            currentRoutine = StartCoroutine(RunDialogueBlock());
         }
         
         
@@ -84,10 +86,11 @@ namespace Content.UI
                 yield return StartCoroutine(TypeLine(line));
             }
             
-            Util.UIDisable(cg);
+            
             
             yield return new WaitForSeconds(0.1f); // 약간의 텀
             
+            Util.UIDisable(cg);
             OnComplete?.Invoke();
         }
         
@@ -109,9 +112,8 @@ namespace Content.UI
                 
             }
             
-            Util.UIDisable(cg);
-            
             yield return new WaitForSeconds(0.1f); // 약간의 텀
+            Util.UIDisable(cg);
             
             OnComplete?.Invoke();
         }
@@ -137,6 +139,11 @@ namespace Content.UI
             
             //키 입력 대기
             yield return waitKeyInput;
+            
+            //다음 프레임까지 대기해서 중복 입력 방지
+            yield return null; 
         }
+        
     }
+  
 }
