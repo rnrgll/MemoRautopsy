@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Event;
 using Managers;
 using UnityEngine;
 using Utility;
@@ -14,13 +16,12 @@ namespace Scenes
             base.Init();
             SceneType = Define.SceneType.Inspect;
             //todo: day를 플레이어 진행상황에 맞게 가져오기
-            
-            //LoadBodyDummy();
-            
+            _day = Manager.Data.GameDay;
         }
 
         public override void OnEnterScene()
         {
+            
             LoadBodyDummy();
         }
 

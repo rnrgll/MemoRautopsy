@@ -29,9 +29,8 @@ namespace Content.Interactable
             set => connectScene = value;
         }
 
-        public void Interact()
+        public virtual void Interact()
         {
-            Debug.Log("adfsf");
             //진짜 상호작용을 구현한다.
             GetComponent<TriggerEventObject>().Trigger();
         }

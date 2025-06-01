@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7ed7d9b9694aa59bc3057a5111e1f4, type: 3}
+  m_Name: nar_3_mouth
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "\uC77C\uBD80\uB7EC \uC785 \uC548\uC5D0 \uC228\uAE34 \uAC78\uAE4C\u2026?"
+  - "\uC0BC\uD0A4\uC9C0 \uC54A\uACE0 \uADF8\uB300\uB85C \uC788\uC5C8\uB2E4\uB294
+    \uAC74, \uB204\uAD70\uAC00\uC5D0\uAC8C \uC804\uB2EC\uD558\uB824\uACE0 \uD588\uB358
+    \uAC70\uC57C."
+  - "\uC774\uAC78 \uAEBC\uB0B4\uC11C \uD655\uC778\uD574\uBCF4\uBA74\u2026 \uBB54\uAC00
+    \uB2E8\uC11C\uAC00 \uB098\uC62C\uC9C0\uB3C4 \uBAB0\uB77C."
+  - "\uC8FD\uAE30 \uC9C1\uC804\uC5D0 \uB0A8\uAE34 \uB9C8\uC9C0\uB9C9 \uBA54\uC2DC\uC9C0\uC77C
+    \uC218\uB3C4 \uC788\uC5B4."

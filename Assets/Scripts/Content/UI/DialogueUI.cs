@@ -131,11 +131,12 @@ namespace Content.UI
                     lineText.text = line;
                     break;
                 }
-
+                
                 lineText.text = $"{lineText.text}{line[i]}";
                 
                 yield return new WaitForSeconds(typeSpeed);
             }
+            yield return null; 
             
             //키 입력 대기
             yield return waitKeyInput;

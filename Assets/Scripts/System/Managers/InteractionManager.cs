@@ -51,6 +51,12 @@ namespace Managers
             //상호작용
             if (currentTarget != null && Input.GetKeyDown(keyCode))
             {
+                if (currentUI != null)
+                {
+                    currentUI.ReturnToPool();
+                    currentUI = null;
+                }
+                lastTarget = null;
                 currentTarget.Interact();
             }
             

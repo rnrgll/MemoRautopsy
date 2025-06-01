@@ -952,6 +952,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: e86e8f4c220d44d05a5701984b5c2089,
+        type: 2}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
       propertyPath: interactText
       value: "\uC785 \uC8FC\uBCC0 \uC0C1\uCC98"
       objectReference: {fileID: 0}
@@ -1054,6 +1060,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: clue
       objectReference: {fileID: 0}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 762a66c02b3cc45ac8a69392d57bb127,
+        type: 2}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
       propertyPath: interactText
@@ -1163,6 +1175,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: clue
       objectReference: {fileID: 0}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: fc70d7937168d45e0a973665b9df3228,
+        type: 2}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
       propertyPath: interactText

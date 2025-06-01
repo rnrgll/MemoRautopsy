@@ -68,44 +68,46 @@ namespace Managers
         /// <param name="loadSceneMode">Single(0) : Closes all current loaded Scenes and loads a Scene. / Additive(1) : Adds the Scene to the current loaded Scenes. </param>
         public void AsncLoadScene(Define.Scene scene, float effectDelay = 0, bool useEffect = false, int loadSceneMode = 1)
         {
-            StartCoroutine(CoLoadScene());
-            
-            
-            IEnumerator CoLoadScene()
-            {
-                CurrentScene?.OnExitScene();
-                
-                if (useEffect && effectPanels.Count > 0)
-                {
-                    yield return StartCoroutine(EffectIn(0));
-                }
-                
-                yield return new WaitForSeconds(effectDelay);
-                
-                AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(GetSceneName(scene), (LoadSceneMode)loadSceneMode);
-                asyncOperation.allowSceneActivation = false;
-                
-                while (asyncOperation.progress < 0.9f)
-                {
-                    yield return null;
-                }
-                
-                asyncOperation.allowSceneActivation = true;
-                
-                yield return null; //씬 전환 기다리기
-                
-                //fade 효과
-                if (useEffect)
-                {
-                    yield return StartCoroutine(EffectOut());
-                }
-                
-                //씬 진입 초기화
-                Debug.Log(CurrentScene.SceneType.ToString());
-                CurrentScene?.OnEnterScene();
-                
-            }
+            StartCoroutine(CoLoadScene(scene,effectDelay, useEffect, loadSceneMode));
         }
+
+        public IEnumerator CoLoadScene(Define.Scene scene, float effectDelay = 0, bool useEffect = false,
+            int loadSceneMode = 1)
+        {
+            CurrentScene?.OnExitScene();
+                
+            if (useEffect && effectPanels.Count > 0)
+            {
+                yield return StartCoroutine(EffectIn(0));
+            }
+                
+            yield return new WaitForSeconds(effectDelay);
+                
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(GetSceneName(scene), (LoadSceneMode)loadSceneMode);
+            asyncOperation.allowSceneActivation = false;
+                
+            while (asyncOperation.progress < 0.9f)
+            {
+                yield return null;
+            }
+                
+            asyncOperation.allowSceneActivation = true;
+                
+            yield return null; //씬 전환 기다리기
+                
+            //fade 효과
+            if (useEffect)
+            {
+                yield return StartCoroutine(EffectOut());
+            }
+                
+            //씬 진입 초기화
+            Debug.Log(CurrentScene.SceneType.ToString());
+            CurrentScene?.OnEnterScene();
+        }
+        
+        
+        
         #endregion
 
         #region Scene Change
@@ -141,7 +143,7 @@ namespace Managers
 
         }
 
-        private IEnumerator  EffectOut()
+        public IEnumerator  EffectOut()
         {
             if (currentPanel == null) yield break;
 
@@ -158,6 +160,11 @@ namespace Managers
             currentPanel = null;
         }
 
+        public IEnumerator EffectOut(int panelIndex)
+        {
+            currentPanel = effectPanels[panelIndex];
+            yield return StartCoroutine(EffectOut());
+        }
 
         private IEnumerator WaitEnterNextScene()
         {

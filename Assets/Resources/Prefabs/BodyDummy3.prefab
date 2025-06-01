@@ -13635,6 +13635,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4321651453363376613}
     m_Modifications:
+    - target: {fileID: 407385220215060220, guid: cabe748e89bad459fa5f6b809f56ef7b,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: be604b417ef394a08add952d6c3f8f10,
+        type: 2}
     - target: {fileID: 3725952844913876533, guid: cabe748e89bad459fa5f6b809f56ef7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13709,6 +13715,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4321651453363376613}
     m_Modifications:
+    - target: {fileID: 1801350573676261806, guid: 9f7ff2a0120f74208981b3b39e8df9f0,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 751a390686de5408785b8c11c1345833,
+        type: 2}
     - target: {fileID: 4286795299547444139, guid: 9f7ff2a0120f74208981b3b39e8df9f0,
         type: 3}
       propertyPath: m_Name
@@ -13838,6 +13850,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7029089649662723380, guid: 202f5f283b66c4def961cc707840c8b3,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 888219df0b3f54ce68844de114104d46,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -156,6 +156,51 @@ Transform:
   - {fileID: 7064927669808960032}
   m_Father: {fileID: 6275144105537468313}
   m_LocalEulerAnglesHint: {x: 0, y: 56.747, z: 0}
+--- !u!1 &1912673299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912673301}
+  - component: {fileID: 1912673300}
+  m_Layer: 0
+  m_Name: LabMapScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1912673300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912673299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669922a1c323418d8b1ac31e35d3076d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScenes: 
+--- !u!4 &1912673301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912673299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9200993, y: 1.2361765, z: -3.8532443}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2083687379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,7 +4972,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -12734,7 +12779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &5621076140187945326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15085,7 +15130,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.8745098, g: 0.9529412, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 4.05
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15124,7 +15169,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 5
@@ -16105,7 +16150,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7882353, g: 0.9411765, b: 1, a: 1}
-  m_Intensity: 1.158163
+  m_Intensity: 12.99
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21882,3 +21927,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 2083687382}
   - {fileID: 6515932387559043556}
+  - {fileID: 1912673301}

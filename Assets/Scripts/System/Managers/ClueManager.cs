@@ -39,9 +39,6 @@ namespace Managers
             //UI 켜기
             StartCoroutine(ShowClueAfterDelay(_delay, clueData));
             
-           
-            
-            
         }
 
         public void CloseClueUI(ClueUI ui, Define.ClueId requestClueId)
@@ -50,7 +47,13 @@ namespace Managers
             {
                 Manager.UI.CloseUI(ui);
                 _currentClue.VirtualCamera.gameObject.SetActive(false);
+                
+                //이벤트 시퀀스 진행(단서 관련 다이얼로그)
+                Manager.Event.Runner.LoadSequence(_currentClue.ClueEvent);
+                
+                Manager.Event.Runner.StartSequence();
             }
+            
                 
             else
                 Debug.Log("활성화된 단서와 일치하지 않습니다.");

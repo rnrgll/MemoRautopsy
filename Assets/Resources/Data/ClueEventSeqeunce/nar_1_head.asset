@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7ed7d9b9694aa59bc3057a5111e1f4, type: 3}
+  m_Name: nar_1_head
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "\uB4A4\uD1B5\uC218\uC5D0 \uAF64 \uD070 \uC0C1\uCC98\uAC00 \uC788\uB124."
+  - "\uBCBD\uC774\uB098 \uBC14\uB2E5\uC5D0 \uBD80\uB52A\uD78C \uAC78 \uC218\uB3C4
+    \uC788\uC9C0\uB9CC\u2026"
+  - "\uB204\uAD70\uAC00\uAC00 \uB4A4\uC5D0\uC11C \uACF5\uACA9\uD55C \uAC74 \uC544\uB2D0\uAE4C?"
+  - "\uC5B4\uCA4C\uBA74\u2026 \uC774 \uC0C1\uCC98\uAC00 \uC9C1\uC811\uC801\uC778
+    \uC0AC\uB9DD \uC6D0\uC778\uC77C\uC9C0\uB3C4 \uBAB0\uB77C."

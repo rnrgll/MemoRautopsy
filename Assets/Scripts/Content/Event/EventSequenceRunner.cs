@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Event
 {
-    public class EventSequenceRunner
+    
+    public class EventSequenceRunner : MonoBehaviour
     {
         private EventSequence currentSequence;
         private int currentIdx = 0;

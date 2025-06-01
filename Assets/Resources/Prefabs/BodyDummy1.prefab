@@ -338,6 +338,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 550b786aabe104d809845eed811c8703,
+        type: 2}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
       propertyPath: interactText
       value: "\uD314\uC5D0 \uC788\uB294 \uBA4D"
       objectReference: {fileID: 0}
@@ -614,6 +620,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 7175ab05715f44a24aaece50a912cb49,
+        type: 2}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
       propertyPath: interactText
       value: "\uBA38\uB9AC \uC0C1\uCC98"
       objectReference: {fileID: 0}
@@ -808,6 +820,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: clue
       objectReference: {fileID: 0}
+    - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
+        type: 3}
+      propertyPath: ClueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: d5805b90201c64ac5988897e4037770d,
+        type: 2}
     - target: {fileID: 709062137700214798, guid: 3272526cf54dc419ca7f80e462d5619b,
         type: 3}
       propertyPath: <VirtualCamera>k__BackingField

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba0d73452504d0ba963a43f5d8be149, type: 3}
+  m_Name: 1_4_BodyBagEvent
+  m_EditorClassIdentifier: 
+  Steps:
+  - {fileID: 11400000, guid: c9c5f432dd71041b898efe329f071c9a, type: 2}
+  - {fileID: 11400000, guid: 13ef7960b40254c7c96eb3709b7b1f21, type: 2}
+  - {fileID: 11400000, guid: f72e9cd8e9422496e948d871926c1e8e, type: 2}
+  - {fileID: 11400000, guid: 13ef7960b40254c7c96eb3709b7b1f21, type: 2}
+  - {fileID: 11400000, guid: 13ef7960b40254c7c96eb3709b7b1f21, type: 2}

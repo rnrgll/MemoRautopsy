@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +10,7 @@ namespace Event
     [CreateAssetMenu(fileName = "SceneChangeStep", menuName = "Data/Event/SceneChangeStep")]
     public class SceneChangeStep : BaseEventStep
     {
-        [SerializeField] private Define.Scene scene;
+        [SerializeField] private List<Define.Scene > scenes;
         [SerializeField] private bool isAsyncLoad;
         
         [Header("Async load setting")]
@@ -18,14 +20,49 @@ namespace Event
         
         public override void Run(EventSequenceRunner runner)
         {
-            if (isAsyncLoad)
+            if (!isAsyncLoad)
             {
-                Manager.Scene.AsncLoadScene(scene,delay,effect,(int)loadSceneMode);
+                // 싱크 방식이면 첫 씬만 싱글/나머지는 Additive
+                for (int i = 0; i < scenes.Count; i++)
+                {
+                    Manager.Scene.LoadScene(scenes[i]);
+                }
             }
+            
             else
             {
-                Manager.Scene.LoadScene(scene);
+                // 비동기 방식
+                runner.StartCoroutine(LoadMultipleScenes());
+            }
+            
+           
+        }
+        private IEnumerator LoadMultipleScenes()
+        {
+            // 첫 씬만 이펙트 포함해서 로드
+            bool first = true;
+
+            foreach (var scene in scenes)
+            {
+                if (first)
+                {
+                    yield return Manager.Scene.CoLoadScene(scene, delay, effect, (int)loadSceneMode);
+                    first = false;
+                }
+                else
+                {
+                    yield return Manager.Scene.CoLoadScene(scene, 0f, false, (int)loadSceneMode);
+                }
+                
+            }
+
+            //마지막은 fade out
+            if (effect)
+            {
+                yield return Manager.Scene.EffectOut(0);
+                Debug.Log("페이드 아웃 마지막에");
             }
         }
+        
     }
 }

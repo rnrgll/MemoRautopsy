@@ -8,6 +8,6 @@ namespace Event
     public class DialogueBlock
     {
         public string speakerName;
-        [TextArea] public List<string> lines;
+        [TextArea(2, 4)] public List<string> lines;
     }
 }

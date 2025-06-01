@@ -82,7 +82,7 @@ namespace Player
         
         //property 구독
         //플레이어 컨트롤 관련 메서드
-        private void SetControlActive(bool value)
+        public void SetControlActive(bool value)
         {
             IsControlActive = !value;
             SetCursorLock(IsControlActive);

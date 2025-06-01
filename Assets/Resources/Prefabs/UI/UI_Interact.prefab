@@ -54,13 +54,13 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1420365959
   m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &5767454298073341886
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[E] \uC870\uC0AC\uD558\uAE30"
+  m_text: "[E] \uD655\uC778\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a41d7df2f1c1487fa3188d73975710c, type: 2}
   m_sharedMaterial: {fileID: -4403543023291875321, guid: 9a41d7df2f1c1487fa3188d73975710c,
