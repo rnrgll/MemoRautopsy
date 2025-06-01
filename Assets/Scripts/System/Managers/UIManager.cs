@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Content.UI;
 using DesignPattern;
+using Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -15,6 +16,15 @@ namespace Managers
 		private Stack<BaseUI> _UIStack = new Stack<BaseUI>();
 		private int _order = 50;
 
+		//공통 UI
+		private SharedUI sharedUI;
+		[SerializeField] private SharedUI sharedUIPrefab;
+		
+		//ui 오브젝트 풀
+		private ObjectPool _interactUIPool;
+		[SerializeField] private InteractUI _interactUIPrefab;
+		[SerializeField] private Transform _poolTransform;
+		
 		public GameObject RootUI
 		{
 			get
@@ -46,9 +56,22 @@ namespace Managers
 		// UI 활성화 여부
 		public ObservableProperty<bool> IsUIActive= new ();
 
-		private void Awake() => SingletonInit();
+		
+		//-----
+		private void Awake() => Init();
 
+		private void Init()
+		{
+			SingletonInit();
 
+			_interactUIPool = new ObjectPool(_interactUIPrefab, _poolTransform );
+			_interactUIPool.Init(5);
+			
+			
+			//테스트
+			CreateSharedUI();
+		}
+		
 		public void SetCanvas(GameObject uiGameObject)
 		{
 			Canvas canvas = uiGameObject.GetComponent<Canvas>();
@@ -62,7 +85,7 @@ namespace Managers
 			_order++;
 
 		}
-
+		
 		public T ShowUI<T>(string prefabPath) where T : BaseUI
 		{
 			if (string.IsNullOrEmpty(prefabPath))
@@ -124,5 +147,101 @@ namespace Managers
 			
 			Debug.Log("열려있는 UI를 모두 닫았습니다.");
 		}
+
+		public SharedUI CreateSharedUI()
+		{
+			if (sharedUI != null) return null;
+			sharedUI = Instantiate(sharedUIPrefab);
+			sharedUI.transform.SetParent(this.transform);
+			return sharedUI;
+		}
+
+		public void DestroySharedUI()
+		{
+			if(sharedUI==null) return;
+			
+			Destroy(sharedUI.gameObject);
+			sharedUI = null;
+		}
+
+		public InteractUI ShowInteractUI(Transform transform)
+		{
+			InteractUI ui = _interactUIPool.Get() as InteractUI;
+			ui.transform.position = transform.position;
+			ui.transform.SetParent(transform);
+			ui.SetCamera();
+
+			return ui;
+		}
+
+		public DialogueUI ShowDialouge(List<string> dialougeLines, Action onComplete=null)
+		{
+			IsUIActive.Value = true;
+			
+			//콜백 추가
+			Action onEndDialogue = () =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke();
+			};
+			
+			//데이터 셋팅
+			sharedUI.Dialogue.SetData(dialougeLines, onEndDialogue);
+			//시작하기
+			sharedUI.Dialogue.PlayNarration();
+
+			return sharedUI.Dialogue;
+		}
+		
+		public DialogueUI ShowDialouge(List<DialogueBlock> dialogueBlocks, Action onComplete=null)
+		{
+			IsUIActive.Value = true;
+
+			//콜백 추가
+			Action onEndDialogue = () =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke();
+			};
+			
+			
+            IsUIActive.Value = true;
+			
+			
+			//데이터 셋팅
+			sharedUI.Dialogue.SetData(dialogueBlocks, onEndDialogue);
+			//시작하기
+			sharedUI.Dialogue.PlayDialogue();
+
+			return sharedUI.Dialogue;
+		}
+		
+		public ChoiceUI ShowChoice(string question, string optionA, string optionB, Action<int> onComplete)
+		{
+			//콜백 추가
+			Action<int> onEndDialogue = (choice) =>
+			{
+				if (_UIStack.Count == 0)
+					IsUIActive.Value = false;
+
+				onComplete?.Invoke(choice);
+			};
+			
+			
+			IsUIActive.Value = true;
+			
+			
+			//데이터 셋팅
+			sharedUI.Choice.SetData(question, optionA, optionB, onEndDialogue);
+			//시작하기
+			sharedUI.Choice.ShowChoice();
+
+			return sharedUI.Choice;
+		}
+		
 	}
 }

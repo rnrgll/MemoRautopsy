@@ -12,6 +12,8 @@ namespace Utility
         {
             { Scene.Title, "TitleScene" },
             { Scene.Lab , "LabScene"},
+            { Scene.Inspect , "InspectScene"},
+            { Scene.LabMap , "LabMap"},
             { Scene.Test1, "Test_PlayerMoveScene" },
             { Scene.Test2, "Test_SceneMove1" },
             { Scene.Test3, "Test_SceneMove2" },
@@ -26,13 +28,16 @@ namespace Utility
             Lab,
             Test1,
             Test2,
-            Test3
+            Test3,
+            Inspect,
+            LabMap,
             
         }
         
         public enum SceneType
         {
             Unknown,
+            Title,
             Main,
             Inspect,
             Memory,
@@ -45,6 +50,12 @@ namespace Utility
             day1_arm_injection,
             day1_finger_scratch,
             day1_head_injury,
+            day2_hand_paper,
+            day2_mouth_injury,
+            day2_neck_injection,
+            day3_stomach_injection,
+            day3_mouth_chip,
+            day3_arm_burn,
             
         }
 

@@ -29,12 +29,7 @@ public class ClueObject : MonoBehaviour, IInteractable
         
     }
     
-    string IInteractable.InteractText
-    {
-        get => interactText;
-        set => interactText = value;
-    }
-
+    
     Define.Scene IInteractable.ConnectScene
     {
         get => connectScene;

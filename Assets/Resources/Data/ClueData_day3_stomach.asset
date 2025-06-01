@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: ClueData_day3_stomach
+  m_EditorClassIdentifier: 
+  clueId: 6
+  day: 3
+  title: "\uBCF5\uBD80 \uC544\uB798\uCABD \uC8FC\uC0AC \uC790\uAD6D"
+  description: "\uBCF5\uBD80 \uC624\uB978\uCABD \uC544\uB798, \uC605\uC740 \uBA4D\uACFC
+    \uD568\uAED8 \uB0A0\uCE74\uB85C\uC6B4 \uC8FC\uC0AC \uC790\uAD6D\uC774 \uD558\uB098
+    \uC788\uB2E4. "
+  playerThoughts: "\uB610 \uAC19\uC740 \uC8FC\uC0AC \uC790\uAD6D\uC774\u2026\n\uB85C\uAC74\uB3C4
+    \uAC19\uC740 \uC57D\uBB3C\uC5D0 \uC758\uD574 \uC0B4\uD574\uB2F9\uD55C \uAC78\uAE4C?"
+  clueImage: {fileID: 21300000, guid: c38cd7bc7e7544dd9bf7a72bb7f25f67, type: 3}

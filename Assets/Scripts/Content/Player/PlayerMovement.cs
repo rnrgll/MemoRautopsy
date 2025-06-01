@@ -71,6 +71,12 @@ namespace Player
             return rotateDir.normalized;
         }
 
+        public void SetInitRotation(Vector3 eulerAngle)
+        {
+            _currentRotation.x = eulerAngle.y; //좌우 회전값
+            _currentRotation.y = eulerAngle.x; //위아래 회전값
+        }
+
         public Vector3 GetMoveDirection()
         {
             Vector3 input = GetInputDirection();

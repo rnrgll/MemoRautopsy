@@ -8,7 +8,7 @@ namespace DesignPattern
     {
         private PooledObject prefab;
         private Transform parent;
-        private Stack<PooledObject> pool = new Stack<PooledObject>();
+        private Stack<PooledObject> poolStack = new Stack<PooledObject>();
 
         public ObjectPool(PooledObject prefab, Transform parent)
         {
@@ -23,21 +23,21 @@ namespace DesignPattern
                 PooledObject instance = Instantiate(prefab, parent);
                 instance.gameObject.SetActive(false);
                 instance.SetPool(this);
-                pool.Push(instance);
+                poolStack.Push(instance);
             }
         }
 
         public PooledObject Get()
         {
             PooledObject instance;
-            if (pool.Count <= 0)
+            if (poolStack.Count <= 0)
             {
                 instance = Instantiate(prefab, parent);
                 instance.SetPool(this);
             }
             else
             {
-                instance = pool.Pop();
+                instance = poolStack.Pop();
             }
 
             instance.gameObject.SetActive(true);
@@ -47,16 +47,17 @@ namespace DesignPattern
         public void Release(PooledObject poolObject)
         {
             poolObject.gameObject.SetActive(false);
-            pool.Push(poolObject);
+            poolObject.transform.SetParent(parent);
+            poolStack.Push(poolObject);
         }
 
         public void Clear()
         {
-            foreach (var obj in pool)
+            foreach (var obj in poolStack)
             {
                 Destroy(obj.gameObject);
             }
-            pool.Clear();
+            poolStack.Clear();
         }
     }
 }

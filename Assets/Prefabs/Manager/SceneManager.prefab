@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1466371446328430844}
   - component: {fileID: 5674785527075597640}
-  - component: {fileID: 7830088004850990329}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -49,21 +48,10 @@ MonoBehaviour:
   CurrentScene: {fileID: 0}
   effectPanels:
   - {fileID: 5073781953410231895}
+  PlayGameScene: 1
+  EndGameScene: 2
   animationSmoothness: 0.25
   animationSpeed: 0.8
---- !u!114 &7830088004850990329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026647828498648137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5ce2e54d464b8d89245ed4721bdc67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Status: {fileID: 0}
 --- !u!1 &3930240789951592432
 GameObject:
   m_ObjectHideFlags: 0

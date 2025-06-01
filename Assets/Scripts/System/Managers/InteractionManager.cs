@@ -1,20 +1,25 @@
 using System;
 using System.Interfaces;
+using Content.Interactable;
+using Content.UI;
 using UnityEngine;
 
 namespace Managers
 {
     public class InteractionManager : MonoBehaviour
     {
-        
         public bool IsControlActive { get; set; } = true; //제어
         
         private Vector3 rayOrigin;
         private IInteractable currentTarget;
-        
+        private IInteractable lastTarget;
+        private InteractUI currentUI;
+
+        [SerializeField] private KeyCode keyCode;
         
         [SerializeField] private LayerMask targetLayer;
-
+        [SerializeField] [Range(2f, 5f)] private float rayLength = 2f;
+        
 
         private void OnEnable() => SubscribeEvents();
         private void OnDisable() => UnsubscribeEvents();
@@ -26,10 +31,26 @@ namespace Managers
             
             currentTarget = ShootRay();
             
-
-            if (Input.GetKeyDown(KeyCode.Mouse0) && currentTarget != null)
+            if (currentTarget != lastTarget)
             {
-                Debug.Log("마우스 클릭");
+                //이전 ui 제거(풀로 돌려보내기)
+                if (currentUI != null)
+                {
+                    currentUI.ReturnToPool();
+                    currentUI = null;
+                }
+
+                if (currentTarget is IUIInteractable uiTarget)
+                {
+                    currentUI = Manager.UI.ShowInteractUI(uiTarget.GetUIPosition());
+                }
+                
+                lastTarget = currentTarget;
+            }
+
+            //상호작용
+            if (currentTarget != null && Input.GetKeyDown(keyCode))
+            {
                 currentTarget.Interact();
             }
             
@@ -43,8 +64,8 @@ namespace Managers
             Ray ray = Camera.main.ScreenPointToRay(screenPosition);
 
             RaycastHit hit;
-            Debug.DrawRay(ray.origin, ray.direction * 100f,  Color.green);
-            if (Physics.Raycast(ray,  out hit, 100f, targetLayer))
+            Debug.DrawRay(ray.origin, ray.direction * rayLength,  Color.green);
+            if (Physics.Raycast(ray,  out hit, rayLength, targetLayer))
             {
                 return hit.transform.GetComponent<IInteractable>();
             }
@@ -52,15 +73,8 @@ namespace Managers
             return null;
         }
         
-        //오브젝트가 iinteractable이면 outline을 만든다
-        
-        //플레이어가 f를 누르면 interact를 호출한다.
-        
-        
-        
         private void SubscribeEvents()
         {
-            Debug.Log("subscribe호출");
            Manager.UI.IsUIActive.Subscribe(SetControlActive);
         }
 
