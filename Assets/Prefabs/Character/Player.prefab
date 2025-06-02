@@ -327,7 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa422bde4ba8e48449c180f305671e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sightCamera: {fileID: 0}
+  _status: {fileID: 8493744883031973362}
+  _movement: {fileID: 2572132477514925851}
+  _sightCamera: {fileID: 7871796017639434943}
 --- !u!114 &2572132477514925851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bd5bcf455d74f0fa777c7be537c704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 5
+  <MoveSpeed>k__BackingField: 2
   <RotateSpeed>k__BackingField: 5
   IsInvestigating:
     _value: 0

@@ -8,17 +8,29 @@ namespace Event
     public class VirtualCamTransitionStep : BaseEventStep
     {
         [SerializeField] private string vCamKey;
+        [SerializeField] private bool controlSpeed = false;
+        [SerializeField] private float speed;
         [SerializeField] private bool setActive;
-        
+
+        private float originSpeed;
         
         public override void Run(EventSequenceRunner runner)
         {
+            Camera main = Camera.main;
+            CinemachineBrain cb = main.GetComponent<CinemachineBrain>();
+            
+            originSpeed = cb.m_DefaultBlend.m_Time;
+
+            if(controlSpeed)
+                cb.m_DefaultBlend.m_Time = speed;
+            
             var cam = Manager.Event.GetVCam(vCamKey);
             if (cam != null)
                 cam.gameObject.SetActive(setActive);
             else
                 Debug.LogWarning($"Virtual camera with key '{vCamKey}' not found.");
 
+            cb.m_DefaultBlend.m_Time = originSpeed;
             runner.NextStep();
         }
     }

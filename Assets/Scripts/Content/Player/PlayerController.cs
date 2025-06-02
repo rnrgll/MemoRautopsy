@@ -10,8 +10,8 @@ namespace Player
     {
         public bool IsControlActive { get; set; } = true; //제어
 
-        private PlayerStatus _status;
-        private PlayerMovement _movement;
+        [SerializeField] private PlayerStatus _status;
+        [SerializeField] private PlayerMovement _movement;
         private Animator _animator;
         [SerializeField] private CinemachineVirtualCamera _sightCamera;
         
@@ -36,6 +36,11 @@ namespace Player
 
         public void SetInitRotation(Vector3 eulerAngle)
         {
+            if (_movement==null)
+            {
+            Debug.Log("asfsaf");    
+            }
+            Debug.Log(eulerAngle);
             _movement.SetInitRotation(eulerAngle);
         }
         

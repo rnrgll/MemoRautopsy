@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173b10257b0546b8aba71c2caa28657b, type: 3}
+  m_Name: M1_201_Narration
+  m_EditorClassIdentifier: 
+  dialogueBlocks:
+  - speakerName: "\uC5D8\uB9AC\uC5C7 \uADF8\uB808\uC774"
+    lines:
+    - "\uC9C0\uAE08 \uBB50 \uD558\uB294 \uAC70\uC57C?"
+    - "\uB4A4\uC5D0\uC11C \uBAB0\uB798 \uBB50 \uD558\uB824\uB294 \uAC70\uC9C0?"
+    - "\uC8FC\uC0AC\uAE30\u2026? \uC9C0\uAE08 \uB098\uD55C\uD14C \uADF8\uAC78 \uC4F0\uB824\uB294
+      \uAC70\uC57C?"
+  - speakerName: "\uB2E4\uB2C8\uC5D8 \uBE14\uB808\uC774\uD06C"
+    lines:
+    - "\uC5D8\uB9AC\uC5C7, \uADF8\uAC8C \uC544\uB2C8\uB77C\u2026 \uC81C\uBC1C, \uB0B4
+      \uB9D0\uC744 \uB4E4\uC5B4\uBD10."
+    - "\uC774\uC720\uB294 \uC124\uBA85\uD560 \uC218 \uC5C6\uC9C0\uB9CC..."
+    - "\uC774\uAC74 \uC815\uB9D0\u2026 \uB124\uAC00 \uC9C0\uAE08 \uB2F9\uC7A5 \uB9DE\uC544\uC57C
+      \uD574."
+  - speakerName: "\uC5D8\uB9AC\uC5C7 \uADF8\uB808\uC774"
+    lines:
+    - "\uBB50? \uC774\uC720\uB3C4 \uC124\uBA85 \uBABB \uD558\uBA74\uC11C \uB9DE\uC73C\uB77C\uACE0?"
+    - "\uC7A5\uB09C\uD574? \uC9C0\uAE08 \uB2F9\uC7A5 \uAEBC\uC838. \uACBD\uCC30\uC5D0
+      \uC2E0\uACE0\uD558\uACA0\uC5B4."
+  - speakerName: "\uB2E4\uB2C8\uC5D8 \uBE14\uB808\uC774\uD06C"
+    lines:
+    - "\u2026\uBBF8\uC548\uD574."
+    - "\uADF8\uB798\uB3C4\u2026 \uB09C \uC774\uAC78 \uAF2D, \uB108\uD55C\uD14C \uC8FC\uC785\uD574\uC57C
+      \uD574."

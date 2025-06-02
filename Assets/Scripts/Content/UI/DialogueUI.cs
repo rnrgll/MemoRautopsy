@@ -21,7 +21,6 @@ namespace Content.UI
         [SerializeField] private float typeSpeed = 0.04f;
 
         [SerializeField] private KeyCode nextKey1 = KeyCode.Space;
-        [SerializeField] private KeyCode nextKey2 = KeyCode.Mouse0;
         
         private List<string> _dialogueLines;
         private List<DialogueBlock> _dialogueBlocks;
@@ -37,7 +36,7 @@ namespace Content.UI
             cg = GetComponent<CanvasGroup>();
             _dialogueLines = new();
             OnComplete = null;
-            waitKeyInput = new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space));
+            waitKeyInput = new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             
         }
 
@@ -125,7 +124,7 @@ namespace Content.UI
             for (int i = 0; i < line.Length; i++)
             {
                 
-                if (Input.GetKeyDown(nextKey1) || Input.GetKeyDown(nextKey2))
+                if (Input.GetKeyDown(nextKey1))
                 {
                     //스킵
                     lineText.text = line;
