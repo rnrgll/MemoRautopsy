@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: Day1_unknown_visitor
+  m_EditorClassIdentifier: 
+  clueId: 14
+  day: 1
+  source: 2
+  title: "\uC758\uBB38\uC758 \uC778\uBB3C"
+  description: "\uB2E4\uB2C8\uC5D8\uC774 \uC4F0\uB7EC\uC9C4 \uB4A4, \uC758\uBB38\uC758
+    \uC778\uBB3C\uC774 \uB4F1\uC7A5\uD574 \uB2E4\uB2C8\uC5D8\uC5D0\uAC8C \uC57D\uBB3C\uC744
+    \uD22C\uC5EC\uD588\uB2E4."
+  playerThoughts: "\uB2E4\uB2C8\uC5D8\uC774 \uC800\uD56D\uD558\uB2E4\uAC00 \uC190\uAC00\uB77D\uC744
+    \uB2E4\uCE5C \uAC70\uC600\uC5B4.\n\uD314\uC5D0 \uB0A8\uC740 \uBA4D\uACFC \uC8FC\uC0AC\uC790\uAD6D\uC774
+    \uBC14\uB85C \uC800 \uC57D\uBB3C \uB54C\uBB38\uC774\uC5C8\uC5B4.\n\uB2E4\uB2C8\uC5D8\uC740
+    \uC800 \uC0AC\uB78C\uC5D0\uAC8C \uC0B4\uD574\uB2F9\uD55C \uAC8C \uBD84\uBA85\uD574."
+  clueImage: {fileID: 0}

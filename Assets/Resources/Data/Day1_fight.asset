@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: Day1_fight
+  m_EditorClassIdentifier: 
+  clueId: 11
+  day: 1
+  source: 1
+  title: "\uB2E4\uB2C8\uC5D8\uACFC \uB098\uC758 \uB2E4\uD23C"
+  description: "\uB2E4\uB2C8\uC5D8\uACFC \uBAB8\uC2F8\uC6C0\uC744 \uBC8C\uC600\uACE0,
+    \uADF8 \uACFC\uC815\uC5D0\uC11C \uB2E4\uB2C8\uC5D8\uC774 \uBA38\uB9AC\uB97C \uBD80\uB52A\uD788\uBA70
+    \uC4F0\uB7EC\uC84C\uB2E4."
+  playerThoughts: "\uADF8 \uC0C1\uCC98\uB294\u2026 \uB0B4\uAC00 \uB9CC\uB4E0 \uAC70\uC57C.
+    \uBC94\uC778\uC744 \uCC3E\uC9C0 \uBABB\uD558\uBA74 \uB0B4\uAC00 \uCCB4\uD3EC\uB420
+    \uC218 \uC788\uC5B4."
+  clueImage: {fileID: 0}

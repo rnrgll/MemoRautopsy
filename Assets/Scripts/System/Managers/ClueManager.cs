@@ -19,12 +19,11 @@ namespace Managers
         [SerializeField] private EventSequence _inspectComplete;
         
         
-        
         private ClueObject _currentClue;
         private bool _isShowing = false;
         private bool isCollectAllClues = false;
         private void Awake() => SingletonInit();
-
+        
         public void ShowClueUI(ClueObject clueObject)
         {
             if (_isShowing) return;
@@ -56,6 +55,7 @@ namespace Managers
 
         public void CloseClueUI(ClueUI ui, Define.ClueId requestClueId)
         {
+            if(_currentClue==null) return;
             if (requestClueId == _currentClue.ClueId)
             {
                 _currentClue.VirtualCamera.gameObject.SetActive(false);
@@ -65,19 +65,18 @@ namespace Managers
                 Manager.Event.Runner.LoadSequence(_currentClue.ClueEvent);
                 
                 Manager.Event.Runner.StartSequence();
-                
+
+                _currentClue = null;
                 _isShowing = false; 
             }
             
                 
             else
                 Debug.Log("활성화된 단서와 일치하지 않습니다.");
-
-            isCollectAllClues = CollectAllClues();
-
-
+            
         }
 
+       
         private bool CollectAllClues()
         {
             int currentDay = Manager.Data.GameDay;
@@ -96,6 +95,8 @@ namespace Managers
         // {
         public void OnCompleteInspect()
         {
+            isCollectAllClues = CollectAllClues();
+            
             if (!isCollectAllClues) return;
          
             Manager.Event.Runner.LoadSequence(_inspectComplete);

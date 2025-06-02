@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec6c84829c4170b866927fbda0a967, type: 3}
+  m_Name: Day1_last_seen
+  m_EditorClassIdentifier: 
+  clueId: 10
+  day: 1
+  source: 2
+  title: "\uB9C8\uC9C0\uB9C9 \uBAA9\uACA9\uC790"
+  description: "\uB2E4\uB2C8\uC5D8\uC774 \uC0AC\uB9DD \uC804 \uB9C8\uC9C0\uB9C9\uC73C\uB85C
+    \uB9CC\uB09C \uC0AC\uB78C\uC774 \uB098\uB77C\uACE0 \uD55C\uB2E4."
+  playerThoughts: "\uB0B4\uAC00 \uC6A9\uC758\uC790\uC778 \uAC74\uAC00\u2026? \uD558\uC9C0\uB9CC
+    \uB09C \uAE30\uC5B5\uC774 \uB098\uC9C8 \uC54A\uC544."
+  clueImage: {fileID: 0}

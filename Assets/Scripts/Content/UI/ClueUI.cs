@@ -19,8 +19,11 @@ namespace Content.UI
 
         [SerializeField] private List<CanvasGroup> _controlGroups;
 
+        public event Action onClose;
+        
         private Define.ClueId _clueId;
         private bool _isNew; //todo: 시간되면 새로운 단서는 ui 추가로 띄워주는거 만들기
+        
         
         private void OnDisable() => HideUI();
 
@@ -55,6 +58,7 @@ namespace Content.UI
         public void OnPointerClick(PointerEventData eventData)
         {
             ClueManager.Instance.CloseClueUI(this, _clueId);
+            onClose?.Invoke();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Managers
 		private int _order = 50;
 
 		//공통 UI
-		private SharedUI sharedUI;
+		public SharedUI sharedUI;
 		[SerializeField] private SharedUI sharedUIPrefab;
 		
 		//ui 오브젝트 풀

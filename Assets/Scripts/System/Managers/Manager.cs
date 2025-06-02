@@ -14,7 +14,6 @@ namespace Managers
         public static EventSystemManager Event => EventSystemManager.Instance;
         
         
-        
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {

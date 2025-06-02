@@ -65,7 +65,7 @@ namespace Player
         private void SubscribeEvents()
         {
             Manager.UI.IsUIActive.Subscribe(SetControlActive);
-            
+            Manager.UI.sharedUI.ClueNote.IsControlActive.Subscribe(SetControlActive);
             
             // _status.IsControlActive.Subscribe(SetCursorLock);
             // _status.IsControlActive.Subscribe(SetMoveStop);

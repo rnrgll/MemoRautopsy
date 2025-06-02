@@ -56,6 +56,16 @@ namespace Utility
             day3_mouth_chip,
             day3_arm_burn,
             
+            
+            day1_lab_death,
+            day1_last_seen,
+            day1_fight,
+            day1_injection_attempt,
+            day1_brain_eating,
+            day1_unknown_visitor,
+
+
+            
         }
 
     }

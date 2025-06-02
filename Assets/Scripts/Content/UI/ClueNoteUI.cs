@@ -33,9 +33,9 @@ namespace Content.UI
         private ClueButton _selectedBtn;
         private CanvasGroup _targetPanelCG; 
         private Animator _targetPanelAnim;
-        
-        
-        public bool IsControlActive { get; set; } = true; //제어
+
+
+        public ObservableProperty<bool> IsControlActive = new() { Value = true }; //제어
         
         private void OnEnable() => SubscribeEvents();
         private void OnDisable() => UnsubscribeEvents();
@@ -145,7 +145,7 @@ namespace Content.UI
 
         public void ToggleUI()
         {
-            if(!IsControlActive) return;
+            if(!IsControlActive.Value) return;
             if (_targetPanelCG.alpha == 0)
             {
                 if (ClickedDay == 0) ClickedDay = 1;
@@ -171,7 +171,7 @@ namespace Content.UI
             Manager.UI.IsUIActive.Unsubscribe(SetControlActive);
         }
 
-        private void SetControlActive(bool value) => IsControlActive = !value;
+        private void SetControlActive(bool value) => IsControlActive.Value = !value;
 
     }
 }
