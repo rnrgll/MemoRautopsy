@@ -14,9 +14,9 @@ namespace Utility
             { Scene.Lab , "LabScene"},
             { Scene.Inspect , "InspectScene"},
             { Scene.LabMap , "LabMap"},
-            { Scene.Test1, "Test_PlayerMoveScene" },
-            { Scene.Test2, "Test_SceneMove1" },
-            { Scene.Test3, "Test_SceneMove2" },
+            { Scene.BadEnding , "BadEndingScene"},
+            { Scene.Ending , "EndingScene"},
+            
         };
         
         /// <summary>
@@ -26,11 +26,10 @@ namespace Utility
         {
             Title,
             Lab,
-            Test1,
-            Test2,
-            Test3,
             Inspect,
             LabMap,
+            BadEnding,
+            Ending,
             
         }
         

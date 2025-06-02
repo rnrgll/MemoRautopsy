@@ -94,16 +94,22 @@ namespace Managers
             asyncOperation.allowSceneActivation = true;
                 
             yield return null; //씬 전환 기다리기
-                
+            
+            
             //fade 효과
             if (useEffect)
             {
                 yield return StartCoroutine(EffectOut());
             }
-                
-            //씬 진입 초기화
-            Debug.Log(CurrentScene.SceneType.ToString());
-            CurrentScene?.OnEnterScene();
+            
+            // Additive 로드된 씬을 활성 씬으로 설정
+            Scene loadedScene = SceneManager.GetSceneByName(GetSceneName(scene));
+            if (loadedScene.IsValid())
+            {
+                SceneManager.SetActiveScene(loadedScene);
+            }
+
+
         }
         
         
@@ -121,6 +127,11 @@ namespace Managers
         {
             Manager.UI.DestroySharedUI();
             AsncLoadScene(EndGameScene, 0.5f, true, 0);
+        }
+
+        public void LoadTitleScene()
+        {
+            AsncLoadScene(Define.Scene.Title, 0.5f, true, 0);
         }
 
         #endregion

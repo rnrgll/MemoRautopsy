@@ -26,18 +26,21 @@ namespace Event
                 for (int i = 0; i < scenes.Count; i++)
                 {
                     Manager.Scene.LoadScene(scenes[i]);
+                    runner.NextStep();
                 }
             }
             
             else
             {
                 // 비동기 방식
-                runner.StartCoroutine(LoadMultipleScenes());
+                runner.StartCoroutine(LoadMultipleScenes(runner));
             }
+            
+            
             
            
         }
-        private IEnumerator LoadMultipleScenes()
+        private IEnumerator LoadMultipleScenes(EventSequenceRunner runner)
         {
             // 첫 씬만 이펙트 포함해서 로드
             bool first = true;
@@ -61,7 +64,9 @@ namespace Event
             {
                 yield return Manager.Scene.EffectOut(0);
                 Debug.Log("페이드 아웃 마지막에");
+                
             }
+            runner.NextStep();
         }
         
     }

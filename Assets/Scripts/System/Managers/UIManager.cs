@@ -94,7 +94,7 @@ namespace Managers
 				return null;
 			}
 
-			GameObject prefab = Resources.Load<GameObject>($"UI/{prefabPath}");
+			GameObject prefab = Resources.Load<GameObject>($"Prefabs/UI/{prefabPath}");
 
 			if (prefab == null)
 			{
@@ -177,7 +177,6 @@ namespace Managers
 		public DialogueUI ShowDialouge(List<string> dialougeLines, Action onComplete=null)
 		{
 			IsUIActive.Value = true;
-			
 			//콜백 추가
 			Action onEndDialogue = () =>
 			{

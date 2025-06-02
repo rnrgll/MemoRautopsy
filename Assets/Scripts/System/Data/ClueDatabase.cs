@@ -44,5 +44,38 @@ namespace System.Data
             Debug.Log($"{clueId.ToString()}를 찾을 수 없습니다.");
             return null;
         }
+
+        public List<Define.ClueId> GetClueIdsByDay(int day, ClueSourceType sourceType)
+        {
+            List<Define.ClueId> result = new();
+
+            foreach (var kvp in _clueDB)
+            {
+                var clue = kvp.Value;
+                if (clue.day == day && clue.source == sourceType)
+                {
+                    result.Add(clue.clueId);
+                }
+            }
+
+            return result;
+        }
+        
+        public List<Define.ClueId> GetClueIdsByDay(int day)
+        {
+            List<Define.ClueId> result = new();
+
+            foreach (var kvp in _clueDB)
+            {
+                var clue = kvp.Value;
+                if (clue.day == day)
+                {
+                    result.Add(clue.clueId);
+                }
+            }
+
+            return result;
+        }
+
     }
 }

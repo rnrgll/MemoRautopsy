@@ -9,13 +9,21 @@ namespace Event
     public class ChromaticEffectStep : BaseEventStep
     {
         [SerializeField] private float duration = 0.2f;
-
+        [SerializeField] private bool keepEffectOn = false;
+        
         public override void Run(EventSequenceRunner runner)
         {
             Manager.UI.IsUIActive.Value = true;
             Manager.Event.SetChromatic(true);
-           runner.StartCoroutine(ChromaticRoutine(runner));
-
+            if(keepEffectOn == false)
+                runner.StartCoroutine(ChromaticRoutine(runner));
+            
+            else
+            {
+                Manager.UI.IsUIActive.Value = false;
+                runner.NextStep();
+            }
+            
         }
         
         private IEnumerator ChromaticRoutine(EventSequenceRunner runner)

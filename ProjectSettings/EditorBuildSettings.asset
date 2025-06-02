@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Morgan.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: c9766bba80da1491d8aef214d6d8a1a4
@@ -15,18 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LabScene.unity
     guid: 1e9bb4e4d422048d88ac073405679ada
   - enabled: 1
-    path: Assets/Scenes/Test_PlayerMoveScene.unity
-    guid: df20f5f1071d242c88332d69f129d6a9
-  - enabled: 1
-    path: Assets/Scenes/Test_SceneMove1.unity
-    guid: 142e28d3d7b954b85acc550e1695241c
-  - enabled: 1
-    path: Assets/Scenes/Test_SceneMove2.unity
-    guid: 9722b43574c514fe0a911d92b67bf2d2
-  - enabled: 1
     path: Assets/Scenes/InspectScene.unity
     guid: 822cf711a9da44378b72fc5991af24d9
   - enabled: 1
     path: Assets/Scenes/LabMap.unity
     guid: 4040c003aa605411da47e3c3d6caccec
+  - enabled: 1
+    path: Assets/Scenes/BadEndingScene.unity
+    guid: 07907a9bd398741c1b6385988287a21a
   m_configObjects: {}

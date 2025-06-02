@@ -8,7 +8,7 @@ namespace Managers
 {
     public class InteractionManager : MonoBehaviour
     {
-        public bool IsControlActive { get; set; } = true; //제어
+        [field: SerializeField] public bool IsControlActive { get; set; } = true; //제어
         
         private Vector3 rayOrigin;
         private IInteractable currentTarget;
@@ -24,6 +24,12 @@ namespace Managers
         private void OnEnable() => SubscribeEvents();
         private void OnDisable() => UnsubscribeEvents();
 
+        private void Start()
+        {  
+            IsControlActive = !Manager.UI.IsUIActive.Value;
+            
+         
+        }
 
         private void Update()
         {

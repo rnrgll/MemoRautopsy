@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770f2d55111f4513afe975c86c390e59, type: 3}
   m_Name: 1_401_SceneToInspect
   m_EditorClassIdentifier: 
-  scenes: 0600000005000000
+  scenes: 05000000
   isAsyncLoad: 1
   effect: 1
   delay: 0.5

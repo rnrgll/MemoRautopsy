@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Content.Interactable;
+using Managers;
 using UnityEngine;
 using Utility;
 
@@ -43,6 +45,26 @@ namespace System.Data
         {
             return _cluesByDay.TryGetValue(day, out List<Define.ClueId> list) ? list : null;
         }
+        
+        public List<Define.ClueId> GetCluesByDay(int day, ClueSourceType source)
+        {
+            if (!_cluesByDay.TryGetValue(day, out var clues))
+                return new List<Define.ClueId>();
+
+            List<Define.ClueId> filtered = new();
+
+            foreach (var clueId in clues)
+            {
+                var clueData = Manager.Data.Clue.GetClueData(clueId);
+                if (clueData != null && clueData.source == source)
+                {
+                    filtered.Add(clueId);
+                }
+            }
+
+            return filtered;
+        }
+
 
         public bool HasClue(Define.ClueId clueId)
         {

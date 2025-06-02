@@ -19,6 +19,8 @@ namespace Scenes
         [SerializeField] private EventSequence _eventSequence;
         
         [SerializeField] private List<VCam> virtualCams;
+
+        private static int positionIdx = 0;
         
         protected override void Init()
         {
@@ -49,14 +51,16 @@ namespace Scenes
         }
         private void SetStartTransform()
         {
-            //todo: 스토리 진행에 따라 스타트 포지션 변경해주기
-            _player.transform.position = _startTransforms[0].position;
-            _player.SetInitRotation(_startTransforms[0].eulerAngles);
+            if (positionIdx < 0 || positionIdx >= _startTransforms.Count) return;
+            
+            _player.transform.position = _startTransforms[positionIdx].position;
+            _player.SetInitRotation(_startTransforms[positionIdx].eulerAngles);
+            positionIdx++;
         }
 
         public override void OnExitScene()
         {
-            _player.SetControlActive(true);
+            _player.SetControlActive(true); //커서 보이게 처리
             base.OnExitScene();
             //todo: clear구현
         }
