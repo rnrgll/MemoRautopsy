@@ -19,4 +19,4 @@ MonoBehaviour:
   description: "\uB2E4\uB2C8\uC5D8\uC740 \uC5B4\uC81C \uC2E4\uD5D8\uC2E4\uC5D0\uC11C
     \uC0AC\uB9DD\uD55C \uAC83\uC73C\uB85C \uD655\uC778\uB418\uC5C8\uB2E4."
   playerThoughts: 
-  clueImage: {fileID: 0}
+  clueImage: {fileID: 21300000, guid: d3b6811a6656749369987c6585c25ae0, type: 3}

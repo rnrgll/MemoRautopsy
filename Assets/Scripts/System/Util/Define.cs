@@ -14,8 +14,12 @@ namespace Utility
             { Scene.Lab , "LabScene"},
             { Scene.Inspect , "InspectScene"},
             { Scene.LabMap , "LabMap"},
+            {Scene.Memory1, "Memory1"},
+            {Scene.Memory2, "Memory2"},
+            {Scene.Memory3, "Memory3"},
             { Scene.BadEnding , "BadEndingScene"},
             { Scene.Ending , "EndingScene"},
+            
             
         };
         
@@ -28,6 +32,9 @@ namespace Utility
             Lab,
             Inspect,
             LabMap,
+            Memory1,
+            Memory2,
+            Memory3,
             BadEnding,
             Ending,
             

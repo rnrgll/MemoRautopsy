@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c3e3ef7f6145c8a7692e08188c441e, type: 3}
-  m_Name: GetClue_brain_comsumption
+  m_Script: {fileID: 11500000, guid: 49424cf3f9554531a7cfccad4e94a26e, type: 3}
+  m_Name: 1_611_DistortEffectOn
   m_EditorClassIdentifier: 
-  clueId: 13
+  duration: 2
+  maxIntensity: -0.4
+  centerXRange: {x: 0.3, y: 0.7}

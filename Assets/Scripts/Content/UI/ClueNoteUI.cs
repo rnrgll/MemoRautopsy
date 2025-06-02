@@ -36,7 +36,7 @@ namespace Content.UI
 
 
         public ObservableProperty<bool> IsControlActive = new() { Value = true }; //제어
-        
+        public ObservableProperty<bool> IsOpened = new();
         private void OnEnable() => SubscribeEvents();
         private void OnDisable() => UnsubscribeEvents();
 
@@ -148,6 +148,8 @@ namespace Content.UI
             if(!IsControlActive.Value) return;
             if (_targetPanelCG.alpha == 0)
             {
+                IsOpened.Value = true;
+                
                 if (ClickedDay == 0) ClickedDay = 1;
                 
                 UnloadClueButtons();
@@ -155,7 +157,11 @@ namespace Content.UI
                 LoadClueButtons();
                 _targetPanelAnim.Play("Panel In");
             }
-            else _targetPanelAnim.Play("Panel Out");
+            else
+            {
+                IsOpened.Value = false;
+                _targetPanelAnim.Play("Panel Out");
+            }
         }
         
         

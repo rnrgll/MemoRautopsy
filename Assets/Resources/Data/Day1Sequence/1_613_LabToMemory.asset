@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c3e3ef7f6145c8a7692e08188c441e, type: 3}
-  m_Name: GetClue_brain_comsumption
+  m_Script: {fileID: 11500000, guid: 770f2d55111f4513afe975c86c390e59, type: 3}
+  m_Name: 1_613_LabToMemory
   m_EditorClassIdentifier: 
-  clueId: 13
+  scenes: 00000000
+  isAsyncLoad: 1
+  effect: 1
+  delay: 0.5
+  loadSceneMode: 1

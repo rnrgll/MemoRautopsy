@@ -20,4 +20,4 @@ MonoBehaviour:
     \uB9CC\uB09C \uC0AC\uB78C\uC774 \uB098\uB77C\uACE0 \uD55C\uB2E4."
   playerThoughts: "\uB0B4\uAC00 \uC6A9\uC758\uC790\uC778 \uAC74\uAC00\u2026? \uD558\uC9C0\uB9CC
     \uB09C \uAE30\uC5B5\uC774 \uB098\uC9C8 \uC54A\uC544."
-  clueImage: {fileID: 0}
+  clueImage: {fileID: 21300000, guid: 8bc1d6df3c60d4f9d9d334289bfb674b, type: 3}

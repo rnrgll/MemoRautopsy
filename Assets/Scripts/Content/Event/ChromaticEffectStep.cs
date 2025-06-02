@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Event
 {
-    [CreateAssetMenu(fileName = "ChromaticEffectStep", menuName = "Data/Event/ChromaticEffect", order = 0)]
+    [CreateAssetMenu(fileName = "ChromaticEffectStep", menuName = "Data/Event/ChromaticEffect", order = 10)]
     public class ChromaticEffectStep : BaseEventStep
     {
         [SerializeField] private float duration = 0.2f;
