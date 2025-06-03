@@ -38,6 +38,8 @@ public class Memory1ElliotTrigger : MonoBehaviour
 
         Quaternion targetRot = Quaternion.LookRotation(direction);
         transform.rotation = targetRot; // 또는 부드럽게 Slerp 처리
+        
+        Debug.Log("플레이어 바라보기");
     }
 
     public void PlayEvent()

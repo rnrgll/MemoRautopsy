@@ -57,15 +57,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.04983749
+      - time: 0.070609
         functionName: PlayEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.053030323
-        functionName: LookAtPlayer
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
