@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Event;
 using Managers;
 using UnityEngine;
@@ -13,18 +14,30 @@ namespace Content.ETC
         [SerializeField] private PlayableAsset timeline;
         
         [SerializeField] private EventSequence es;
+        [SerializeField] private GameObject Daniel;
+        
         [SerializeField] private GameObject unknowCharacter;
             
         private void OnEnable()
         {
-            director.playableAsset = timeline;
-            director.Play();
-            
+            Daniel.SetActive(false);
             StartFlow();
         }
 
         private void StartFlow()
         {
+            StartCoroutine(FlowRoutine());
+            
+        }
+
+        private IEnumerator FlowRoutine()
+        {
+            
+            yield return new WaitForSeconds(1.5f);
+            
+            director.playableAsset = timeline;
+            director.Play();
+            
             Manager.Event.Runner.LoadSequence(es);
             Manager.Event.Runner.StartSequence();
         }

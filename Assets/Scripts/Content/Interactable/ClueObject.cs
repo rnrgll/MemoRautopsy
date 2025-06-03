@@ -32,12 +32,6 @@ public class ClueObject : MonoBehaviour, IInteractable
         
     }
     
-    
-    Define.Scene IInteractable.ConnectScene
-    {
-        get => connectScene;
-        set => connectScene = value;
-    }
 
     public void Interact()
     {

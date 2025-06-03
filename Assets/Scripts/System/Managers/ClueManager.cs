@@ -91,43 +91,53 @@ namespace Managers
             return true;
         }
         
-        // public IEnumerator OnCompleteInsepct()
-        // {
         public void OnCompleteInspect()
         {
             isCollectAllClues = CollectAllClues();
             
             if (!isCollectAllClues) return;
-         
-            Manager.Event.Runner.LoadSequence(_inspectComplete);
-            Manager.Event.Runner.StartSequence();
-            
+
+            StartCoroutine(FinishInspect());
             
             //
-            // yield return new WaitForSeconds(1f);
             //
+            // Manager.Event.Runner.LoadSequence(_inspectComplete);
+            // Manager.Event.Runner.StartSequence();
+            //
+            
+          
+        }
+
+        IEnumerator FinishInspect()
+        {
+            yield return new WaitForSeconds(2f);
+   
             // // 완료 대사 출력 (DialogManager 등과 연동 가능)
-            // yield return Manager.UI.ShowDialouge(new List<string>{"...검시에서 확인할 수 있는 건 다 찾은 것 같아."});
-            //
-            // // 여운
-            // yield return new WaitForSeconds(1f);
-            //
-            // //현재 씬 언로드
-            // Scene currentScene = gameObject.scene; 
-            // AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
-            //
-            // // 이전 씬이 비활성화돼 있었다면, 다시 활성화
-            // Scene labScene = SceneManager.GetSceneByName("LabScene");
-            // if (labScene.IsValid())
-            // {
-            //     SceneManager.SetActiveScene(labScene);
-            //     Util.SetSceneObjectsActive(Define.Scene.Lab,true);
-            //     Debug.Log("LabScene 복귀 완료");
-            // }
-            //
-            //
-            // // 씬 전환
-            // Manager.Scene.LoadScene(Define.Scene.Lab);
+            yield return Manager.UI.ShowDialouge(new List<string>{"...검시에서 확인할 수 있는 건 다 찾은 것 같아."}, () => StartCoroutine(RetrunToLab()));
+        }
+
+        IEnumerator RetrunToLab()
+        {
+            yield return new WaitForSeconds(1f);
+            
+            //현재 씬 언로드
+            Scene currentScene = gameObject.scene; 
+            AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
+            
+            // 이전 씬이 비활성화돼 있었다면, 다시 활성화
+            Scene labScene = SceneManager.GetSceneByName("Lab Scene");
+            if (labScene.IsValid())
+            {
+                SceneManager.SetActiveScene(labScene);
+                Util.SetSceneObjectsActive(Define.Scene.Lab,true);
+                Debug.Log("LabScene 복귀 완료");
+                
+                yield break;
+            }
+            
+            
+            // 씬 전환
+            Manager.Scene.LoadScene(Define.Scene.Lab);
         }
         
         

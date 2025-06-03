@@ -36,11 +36,6 @@ namespace Player
 
         public void SetInitRotation(Vector3 eulerAngle)
         {
-            if (_movement==null)
-            {
-            Debug.Log("asfsaf");    
-            }
-            Debug.Log(eulerAngle);
             _movement.SetInitRotation(eulerAngle);
         }
         
@@ -80,6 +75,8 @@ namespace Player
         private void UnsubscribeEvents()
         {
             Manager.UI.IsUIActive.Unsubscribe(SetControlActive);
+            Manager.UI.sharedUI.ClueNote.IsOpened.Unsubscribe(SetControlActive);
+            
             // _status.IsControlActive.Unsubscribe(SetCursorLock);
             // _status.IsControlActive.Unsubscribe(SetMoveStop);
         }

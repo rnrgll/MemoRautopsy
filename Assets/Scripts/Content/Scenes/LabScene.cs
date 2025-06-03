@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Content.ETC;
+using Content.Interactable;
 using Event;
 using Managers;
 using Player;
@@ -9,6 +11,21 @@ using Utility;
 
 namespace Scenes
 {
+    [Serializable]
+    public class DayObject
+    {
+        public GameObject BodyBag;
+        public GameObject DocsTray;
+        public GameObject EmptyTray;
+
+        public void SetActiveAll(bool isActive)
+        {
+            BodyBag.SetActive(isActive);
+            DocsTray.SetActive(isActive);
+            EmptyTray.SetActive(isActive);
+        }
+    }
+    
     public class LabScene : BaseScene
     {
         [SerializeField] private List<Transform> _startTransforms;
@@ -20,7 +37,16 @@ namespace Scenes
         
         [SerializeField] private List<VCam> virtualCams;
 
+        
+        //-------- day1, 2, 3 시체, 서류더미 활성화 onoff
+        public List<DayObject> DayObjects;
+        //public InteractObject Day1Intro;
+        
+        
+        
         private static int positionIdx = 0;
+        
+        
         
         protected override void Init()
         {
@@ -45,8 +71,28 @@ namespace Scenes
             SetStartTransform();
             base.OnEnterScene();
             
-            Manager.Event.Runner.LoadSequence(_eventSequence);
-            Manager.Event.Runner.StartSequence();
+            //day에 따라 오브젝트 활성화
+            int curday = Manager.Data.GameDay;
+            for (int i = 0; i < DayObjects.Count; i++)
+            {
+                if (i == curday - 1)
+                {
+                    DayObjects[i].SetActiveAll(true);
+                }
+                else
+                {
+                    DayObjects[i].SetActiveAll(false);
+                }
+            }
+
+            // if (!Manager.Data.IsCompleted(Day1Intro.interactionId))
+            // {
+            //     Debug.Log("day1 인트로 활성화합니다.");
+            //     Day1Intro.EnableInteraction();
+            // }
+            
+            //Manager.Event.Runner.LoadSequence(_eventSequence);
+            //Manager.Event.Runner.StartSequence();
             
         }
         private void SetStartTransform()
@@ -62,7 +108,8 @@ namespace Scenes
         {
             _player.SetControlActive(true); //커서 보이게 처리
             base.OnExitScene();
-            //todo: clear구현
+            
+            
         }
     }
 }

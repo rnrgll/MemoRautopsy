@@ -16,6 +16,8 @@ namespace Event
             impulseSrc = cam.GetComponent<CinemachineImpulseSource>();
             
             impulseSrc.GenerateImpulse();
+            
+            runner.NextStep();
         }
     }
 }

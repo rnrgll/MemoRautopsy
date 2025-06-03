@@ -30,7 +30,7 @@ public class Memory1ElliotTrigger : MonoBehaviour
         }
     }
     
-    private void LookAtPlayer()
+    public void LookAtPlayer()
     {
         Transform target = playerTransform;
         Vector3 direction = (target.position - transform.position).normalized;
