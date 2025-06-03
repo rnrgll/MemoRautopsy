@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173b10257b0546b8aba71c2caa28657b, type: 3}
+  m_Name: M2_202_Narration
+  m_EditorClassIdentifier: 
+  dialogueBlocks:
+  - speakerName: "\uB2E4\uB2C8\uC5D8 \uBE14\uB808\uC774\uD06C"
+    lines:
+    - "\uC774\uAC78 \uC5D8\uB9AC\uC5C7\uD55C\uD14C \uC8FC\uC785\uD558\uBA74\u2026
+      \uBAA8\uB4E0 \uAC8C \uD574\uACB0\uB420 \uAC70\uC57C"
+  - speakerName: "\uC5D0\uBC00\uB9AC \uCE74\uD130"
+    lines:
+    - "\u2026\uADFC\uB370 \uC6B0\uB9AC, \uC5D8\uB9AC\uC5C7\uD55C\uD150 \uC544\uBB34
+      \uB9D0\uB3C4 \uC548 \uD588\uC796\uC544."
+    - "\uADF8\uB140\uAC00 \uC774\uAC78 \uBC1B\uC544\uC904\uAE4C?"
+  - speakerName: "\uB2E4\uB2C8\uC5D8 \uBE14\uB808\uC774\uD06C"
+    lines:
+    - "\uADF8\uB798\uC11C \uBAB0\uB798 \uD22C\uC5EC\uD560 \uC0DD\uAC01\uC774\uC57C. "
+    - "\uB4E4\uD0A4\uBA74..."
+    - "\uADF8\uB550 \uAC15\uC81C\uB85C\uB77C\uB3C4 \uD574\uC57C \uD574."
+  - speakerName: "\uC5D0\uBC00\uB9AC \uCE74\uD130"
+    lines:
+    - "\uC21C\uC21C\uD788 \uBBFF\uC5B4\uC904\uAE4C\u2026? \uC6B0\uB9AC\uAC00 \uACF5\uACA9\uD558\uB824
+      \uD55C\uB2E4\uACE0 \uC624\uD574\uD558\uBA74 \uC5B4\uCA4C\uC9C0?"
+  - speakerName: "\uB2E4\uB2C8\uC5D8 \uBE14\uB808\uC774\uD06C"
+    lines:
+    - "\uBBFF\uC5B4\uC8FC\uAE38 \uBC14\uB784 \uC218\uBC16\uC5D0..."
+    - "\uB354\uB294 \uC5D8\uB9AC\uC5C7\uC744 \uC18D\uC774\uACE0 \uC2F6\uC9C0 \uC54A\uC544."
+    - "\uC6B0\uB9AC\uAC00 \uC800\uC9C0\uB978 \uC798\uBABB\uC744 \uBC14\uB85C\uC7A1\uAE30
+      \uC704\uD574\uC120 \uBB34\uC870\uAC74 \uD574\uC57C\uD574."
+  - speakerName: "\uC5D0\uBC00\uB9AC \uCE74\uD130"
+    lines:
+    - "\uADF8\uB798 \uB9DE\uC544."
+    - "\uC6B0\uB9AC \uB3D9\uB8CC\uC796\uC544. \uADF8 \uC560\uC5D0\uAC8C \uC774\uB7F0
+      \uBBF8\uCE5C \uC2E4\uD5D8\uC744 \uACC4\uC18D\uD558\uAC8C \uB450\uB294 \uAC74\u2026"
+    - "\uC0AC\uB78C\uC73C\uB85C\uC11C \uD574\uC120 \uC548 \uB420 \uC77C\uC774\uC57C"
