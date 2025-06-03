@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2ba4a1bef04c2cb0615a7d34547da0, type: 3}
-  m_Name: M1_434_ApplyDepthfOfField2
+  m_Script: {fileID: 11500000, guid: 173b10257b0546b8aba71c2caa28657b, type: 3}
+  m_Name: M2_303_Nar
   m_EditorClassIdentifier: 
-  duration: 3
-  focalLength: 300
+  dialogueBlocks:
+  - speakerName: "\uC5D0\uBC00\uB9AC \uCE74\uD130"
+    lines:
+    - "\uD06D... \uC74D...!"

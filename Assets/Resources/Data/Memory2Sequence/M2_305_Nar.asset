@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173b10257b0546b8aba71c2caa28657b, type: 3}
+  m_Name: M2_305_Nar
+  m_EditorClassIdentifier: 
+  dialogueBlocks:
+  - speakerName: "(\uC5D8\uB9AC\uC5C7 \uADF8\uB808\uC774)"
+    lines:
+    - "\uC5D0\uBC00\uB9AC\uAC00 \uC190\uC5D0 \uC950\uACE0 \uC788\uB358 \uC885\uC774
+      \uC870\uAC01\u2026"
+    - "\uADF8\uAC8C \uBC14\uB85C \uC774 \uBB38\uC11C\uC600\uB358 \uAC70\uC57C,"
+    - "\uC8FD\uAE30 \uC9C1\uC804\uAE4C\uC9C0 \uAF2D \uC950\uACE0 \uC788\uC5C8\uB358
+      \uC774\uC720\uAC00 \uC788\uC5C8\uC5B4."
+    - "\uC885\uC774 \uC870\uAC01\uC5D0 'Vac' \uB77C\uACE0 \uC368\uC788\uC5C8\uB294\uB370...
+      \uBC31\uC2E0\uC744 \uC758\uBBF8\uD558\uB294 \uAC78\uAE4C?"
+    - "\uC544\uB2C8\uBA74 \uC2E4\uD5D8\uACFC \uAD00\uB828\uB41C \uC554\uD638..? \uCF54\uB4DC\uBA85..?"
+    - "\uD655\uC2E4\uD55C \uAC74 \uD558\uB098\uC57C. \uBC18\uB4DC\uC2DC \uC800 \uBB38\uC11C\uB97C
+      \uCC3E\uC544\uC57C\uD574. \uC9C0\uAE08 \uC774 \uC0AC\uAC74\uC744 \uD574\uACB0\uD574
+      \uC904 \uC911\uC694\uD55C \uC815\uBCF4\uAC00 \uB4E4\uC5B4\uC788\uC5B4."
