@@ -5,7 +5,7 @@ namespace Event
 {
     public class TriggerEventObject : MonoBehaviour
     {
-        [SerializeField] private EventSequence sequence;
+        [SerializeField] protected EventSequence sequence;
 
         public void Trigger()
         {

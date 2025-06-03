@@ -2205,6 +2205,7 @@ MonoBehaviour:
   nextInteractionId: call 1
   hideBeforeInteraction: 0
   hideAfterInteraction: 0
+  isStartingInteraction: 0
   nextInteractTarget: {fileID: 4399395834070166051}
   isInteractable: 0
 --- !u!114 &593922137
@@ -2996,6 +2997,11 @@ PrefabInstance:
       objectReference: {fileID: 1308543072}
     - target: {fileID: 4770522161242128645, guid: 01b8f9cc943c543b88f536a48f30778a,
         type: 3}
+      propertyPath: hideAfterInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770522161242128645, guid: 01b8f9cc943c543b88f536a48f30778a,
+        type: 3}
       propertyPath: hideBeforeInteraction
       value: 1
       objectReference: {fileID: 0}
@@ -3038,7 +3044,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 781900607576667435, guid: 01b8f9cc943c543b88f536a48f30778a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1674060185}
   m_SourcePrefab: {fileID: 100100000, guid: 01b8f9cc943c543b88f536a48f30778a, type: 3}
 --- !u!4 &875024407 stripped
 Transform:
@@ -3052,7 +3062,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 875024406}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1674060182}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45f43b30e038485c84ab94bdb9a93e7c, type: 3}
@@ -4137,6 +4147,7 @@ GameObject:
   - component: {fileID: 1308543074}
   - component: {fileID: 1308543073}
   - component: {fileID: 1308543076}
+  - component: {fileID: 1308543077}
   m_Layer: 0
   m_Name: Outtro
   m_TagString: Untagged
@@ -4178,6 +4189,7 @@ MonoBehaviour:
   nextInteractionId: intro 2
   hideBeforeInteraction: 1
   hideAfterInteraction: 1
+  isStartingInteraction: 0
   nextInteractTarget: {fileID: 0}
   isInteractable: 0
 --- !u!65 &1308543073
@@ -4199,8 +4211,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.04, y: 2.26, z: 2.44}
+  m_Center: {x: 0, y: 0, z: -3.17}
 --- !u!33 &1308543074
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4216,7 +4228,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308543070}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4270,8 +4282,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.29, y: 2.27, z: 2.67}
+  m_Center: {x: 0, y: 0, z: 1.38}
+--- !u!114 &1308543077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308543070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9b037f2c7941c7a34751a1f96d28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequence: {fileID: 11400000, guid: 52411916e29b14cb68da0d236d7da00f, type: 2}
 --- !u!4 &1308675304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 631378934768038774, guid: 59a65ef3fea4a2f4d94dd28e1a21cb0f,
@@ -5066,6 +5091,7 @@ MonoBehaviour:
   nextInteractionId: docs 1
   hideBeforeInteraction: 0
   hideAfterInteraction: 1
+  isStartingInteraction: 0
   nextInteractTarget: {fileID: 593922136}
   isInteractable: 1
 --- !u!65 &1587462123
@@ -5258,6 +5284,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8471486966806856598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1674060182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 781900607576667435, guid: 01b8f9cc943c543b88f536a48f30778a,
+    type: 3}
+  m_PrefabInstance: {fileID: 875024406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1674060185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674060182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f8aa7bedc74dc6912cdf5a0b17d940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceStep: {fileID: 11400000, guid: 7b2ec5ac6274740988a6bc2c270f6958, type: 2}
 --- !u!4 &1674188065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8433108293007061499, guid: 608f18bc1ad2c624c8fecc89f28180dc,
@@ -5784,7 +5829,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1909895876}
-  - component: {fileID: 1909895879}
   - component: {fileID: 1909895878}
   - component: {fileID: 1909895877}
   m_Layer: 0
@@ -5859,27 +5903,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1909895879
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909895875}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1910454472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1998089790092064766, guid: db036ee995fb2da488a1ba9c22fabc79,
@@ -6169,7 +6192,6 @@ MonoBehaviour:
   - BodyBag: {fileID: 1123883037}
     DocsTray: {fileID: 1227857086}
     EmptyTray: {fileID: 395381381}
-  Day1Intro: {fileID: 1587462122}
 --- !u!4 &2020147170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3321477440709210067, guid: 713e3c8f7b6ba604ba40ffcc00107e62,
@@ -37585,6 +37607,7 @@ MonoBehaviour:
   nextInteractionId: bodybag 1
   hideBeforeInteraction: 0
   hideAfterInteraction: 0
+  isStartingInteraction: 0
   nextInteractTarget: {fileID: 6227913175279587493}
   isInteractable: 0
 --- !u!1001 &4405587394391481477

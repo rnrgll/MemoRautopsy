@@ -1,5 +1,7 @@
+using System;
 using Managers;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Event
 {
@@ -12,18 +14,30 @@ namespace Event
         
         [SerializeField] private EventSequence nextIfA;
         [SerializeField] private EventSequence nextIfB;
+
+        public UnityEvent OnClickOptionA;
+        public UnityEvent OnClickOptionB;
+        
         
         public override void Run(EventSequenceRunner runner)
         {
+            
             Manager.UI.ShowChoice(question,
                 optionA,
                 optionB,
                 (choice) =>
                 {
                     if (choice == 0)
+                    {
+                        OnClickOptionA?.Invoke();
                         runner.LoadSequence(nextIfA);
+                    }
                     else
+                    {
+                        OnClickOptionB?.Invoke();
                         runner.LoadSequence(nextIfB);
+                    }
+                 
 
                     runner.StartSequence();
                 });

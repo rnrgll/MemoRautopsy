@@ -334,54 +334,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a352fc4033b0ef49bfd10476e7ad728, type: 3}
---- !u!1 &699719839
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 699719841}
-  - component: {fileID: 699719840}
-  m_Layer: 0
-  m_Name: ClueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &699719840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699719839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9be50ecd934984addd6e139ad8a581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clueUIPrefab: {fileID: 965515868493696986, guid: 3cffc641bc1e54e41849cda9a6129b99,
-    type: 3}
-  _delay: 1
-  _inspectComplete: {fileID: 11400000, guid: 58e3d21fab0c4408ab5b0ebeb0d731bc, type: 2}
---- !u!4 &699719841
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699719839}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1170.2522, y: 299.9398, z: -6.2872267}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927694472
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb37b639923b45c084007829fe89aa47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <IsControlActive>k__BackingField: 1
   keyCode: 323
   targetLayer:
     serializedVersion: 2
@@ -1139,5 +1092,4 @@ SceneRoots:
   - {fileID: 1936152207}
   - {fileID: 367950374}
   - {fileID: 651864010}
-  - {fileID: 699719841}
   - {fileID: 927694473}

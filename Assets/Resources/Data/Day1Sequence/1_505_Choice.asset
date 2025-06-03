@@ -17,3 +17,9 @@ MonoBehaviour:
   optionB: "\uBA39\uC9C0 \uC54A\uB294\uB2E4"
   nextIfA: {fileID: 11400000, guid: f4af6f3d5e013428caca21e98b0d68e8, type: 2}
   nextIfB: {fileID: 11400000, guid: 939fbf23cb8414505b5e75c9c54c1226, type: 2}
+  OnClickOptionA:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickOptionB:
+    m_PersistentCalls:
+      m_Calls: []

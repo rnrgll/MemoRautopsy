@@ -118,26 +118,39 @@ namespace Managers
 
         IEnumerator RetrunToLab()
         {
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Debug.Log($"[LoadedScene] {SceneManager.GetSceneAt(i).name}");
+            }
+            
             yield return new WaitForSeconds(1f);
             
             //현재 씬 언로드
-            Scene currentScene = gameObject.scene; 
+            Scene currentScene = SceneManager.GetSceneByName("InspectScene");
             AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
             
-            // 이전 씬이 비활성화돼 있었다면, 다시 활성화
-            Scene labScene = SceneManager.GetSceneByName("Lab Scene");
+            Util.SetSceneObjectsActive(Define.Scene.Lab, true);
+
+            Scene labScene = SceneManager.GetSceneByName("LabScene");
             if (labScene.IsValid())
             {
                 SceneManager.SetActiveScene(labScene);
-                Util.SetSceneObjectsActive(Define.Scene.Lab,true);
-                Debug.Log("LabScene 복귀 완료");
-                
-                yield break;
             }
             
-            
-            // 씬 전환
-            Manager.Scene.LoadScene(Define.Scene.Lab);
+            // // 이전 씬이 비활성화돼 있었다면, 다시 활성화
+            // if (labScene.IsValid())
+            // {
+            //     Debug.Log("isvalid통과");
+            //     SceneManager.SetActiveScene(labScene);
+            //     Util.SetSceneObjectsActive(Define.Scene.Lab,true);
+            //     Debug.Log("LabScene 복귀 완료");
+            //     
+            //     yield break;
+            // }
+            //
+            //
+            // // 씬 전환
+            // Manager.Scene.LoadScene(Define.Scene.Lab);
         }
         
         

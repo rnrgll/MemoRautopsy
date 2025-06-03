@@ -18,7 +18,11 @@ namespace Player
         
         private void Awake() => Init();
         private void Update() => HandlePlayerControl();
-        private void OnEnable() => SubscribeEvents();
+        private void OnEnable()
+        {
+            SetControlActive(false); //반대로 넣어주기
+            SubscribeEvents();
+        }
 
         private void OnDisable() => UnsubscribeEvents();
 

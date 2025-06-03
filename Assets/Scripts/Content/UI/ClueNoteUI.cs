@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Content.Interactable;
 using DesignPattern;
 using Managers;
@@ -49,12 +50,23 @@ namespace Content.UI
             get => _clickedDay;
             set
             {
-                if(_clickedDay>=1 && _clickedDay<=_panels.Count)
-                    UnloadClueButtons();
-                
+                // if (_clickedDay == value) return; // 같은 값이면 무시
+                int prevDay = _clickedDay;
                 _clickedDay = value;
+                
+                // 이전에 로딩된 버튼 정리
+                if (prevDay > 0 && prevDay <= _panels.Count)
+                {
+                    UnloadClueButtons(prevDay);
+                }
+                
+                // if(_clickedDay>=1 && _clickedDay<=_panels.Count)
+                //     UnloadClueButtons();
+                //
+                // _clickedDay = value;
+                
                 LoadClueDataByDay(_clickedDay);
-                LoadClueButtons();
+                LoadClueButtons(_clickedDay);
                 
             }
         }
@@ -88,7 +100,7 @@ namespace Content.UI
         }
 
         //가져온 clue id를 기반으로 pool에서 button을 꺼내고 데이터 넣어주기
-        public void LoadClueButtons()
+        public void LoadClueButtons(int day)
         {
             if(_clueDataByDay == null || _clueDataByDay.Count==0) return;
             foreach (var clueData in _clueDataByDay)
@@ -100,14 +112,22 @@ namespace Content.UI
                 clueBtn.SetData(clueData);
             }
             
-            OnClueButtonClicked(_panels[ClickedDay-1].GridContent.transform.GetChild(0).GetComponent<ClueButton>());
+            // 첫 번째 버튼 자동 선택
+            var firstBtn = _panels[day - 1].GridContent
+                .GetComponentsInChildren<ClueButton>()
+                .FirstOrDefault();
+            
+            if (firstBtn != null)
+                OnClueButtonClicked(firstBtn);
+            
+            // OnClueButtonClicked(_panels[ClickedDay-1].GridContent.transform.GetChild(0).GetComponent<ClueButton>());
 
         }
 
-        public void UnloadClueButtons()
+        public void UnloadClueButtons(int day)
         {
             Debug.Log(ClickedDay);
-            foreach (Transform child in _panels[ClickedDay-1].GridContent)
+            foreach (Transform child in _panels[day - 1].GridContent)
             {
                 if (child.TryGetComponent(out ClueButton btn))
                 {
@@ -152,9 +172,10 @@ namespace Content.UI
                 
                 if (ClickedDay == 0) ClickedDay = 1;
                 
-                UnloadClueButtons();
+                //강제 리로드
+                UnloadClueButtons(ClickedDay);
                 LoadClueDataByDay(ClickedDay);
-                LoadClueButtons();
+                LoadClueButtons(ClickedDay);
                 _targetPanelAnim.Play("Panel In");
             }
             else

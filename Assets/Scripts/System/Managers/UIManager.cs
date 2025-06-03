@@ -72,6 +72,20 @@ namespace Managers
 			CreateSharedUI();
 		}
 		
+		private void EnsureEventSystem()
+		{
+			if (FindObjectOfType<EventSystem>() == null)
+			{
+				GameObject eventSystem = new GameObject("EventSystem",
+					typeof(EventSystem),
+					typeof(InputSystemUIInputModule)
+				);
+
+				eventSystem.transform.SetParent(RootUI.transform); // UI_Root 아래로 넣음
+				Debug.LogWarning("EventSystem이 존재하지 않아 자동 생성됨");
+			}
+		}
+		
 		public void SetCanvas(GameObject uiGameObject)
 		{
 			Canvas canvas = uiGameObject.GetComponent<Canvas>();
@@ -176,6 +190,9 @@ namespace Managers
 
 		public DialogueUI ShowDialouge(List<string> dialougeLines, Action onComplete=null)
 		{
+			EnsureEventSystem();
+			
+			
 			IsUIActive.Value = true;
 			//콜백 추가
 			Action onEndDialogue = () =>
@@ -196,6 +213,9 @@ namespace Managers
 		
 		public DialogueUI ShowDialouge(List<DialogueBlock> dialogueBlocks, Action onComplete=null)
 		{
+			EnsureEventSystem();
+			
+			
 			IsUIActive.Value = true;
 
 			//콜백 추가
@@ -221,6 +241,9 @@ namespace Managers
 		
 		public ChoiceUI ShowChoice(string question, string optionA, string optionB, Action<int> onComplete)
 		{
+			EnsureEventSystem();
+			
+			
 			//콜백 추가
 			Action<int> onEndDialogue = (choice) =>
 			{

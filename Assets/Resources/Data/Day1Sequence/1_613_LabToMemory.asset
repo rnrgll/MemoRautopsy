@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770f2d55111f4513afe975c86c390e59, type: 3}
   m_Name: 1_613_LabToMemory
   m_EditorClassIdentifier: 
-  scenes: 00000000
+  scenes: 04000000
   isAsyncLoad: 1
   effect: 1
   delay: 0.5
