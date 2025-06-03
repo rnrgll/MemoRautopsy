@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9a2ce1ee094d51b51efad0e9a71fbf, type: 3}
+  m_Name: 2_501_Choice
+  m_EditorClassIdentifier: 
+  question: "\uC5D0\uBC00\uB9AC\uC758 \uB1CC\uB97C \uBA39\uC744\uAE4C?"
+  optionA: "\uBA39\uB294\uB2E4"
+  optionB: "\uBA39\uC9C0 \uC54A\uB294\uB2E4"
+  nextIfA: {fileID: 11400000, guid: ace510071a52a4074ba508ae4ef34687, type: 2}
+  nextIfB: {fileID: 11400000, guid: a4cd405b229244b599bdca4d547f3f21, type: 2}
+  OnClickOptionA:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClickOptionB:
+    m_PersistentCalls:
+      m_Calls: []

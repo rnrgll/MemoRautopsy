@@ -22,8 +22,6 @@ namespace Content.UI
         public event Action onClose;
         
         private Define.ClueId _clueId;
-        private bool _isNew; //todo: 시간되면 새로운 단서는 ui 추가로 띄워주는거 만들기
-        
         
         private void OnDisable() => HideUI();
 

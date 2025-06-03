@@ -68,9 +68,9 @@ MonoBehaviour:
     isDone: 0
   - interactionId: brain 2
     isDone: 0
-  - interactionId: computer
+  - interactionId: return 2
     isDone: 0
-  - interactionId: outtro 2
+  - interactionId: mail 2
     isDone: 0
   - interactionId: intro 3
     isDone: 0

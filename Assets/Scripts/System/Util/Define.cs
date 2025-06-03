@@ -53,6 +53,7 @@ namespace Utility
         
         public enum ClueId
         {
+            //검시 단서
             day1_arm_injection,
             day1_finger_scratch,
             day1_head_injury,
@@ -64,14 +65,22 @@ namespace Utility
             day3_arm_burn,
             
             
+            //스토리 단서
             day1_lab_death,
             day1_last_seen,
             day1_fight,
             day1_injection_attempt,
             day1_brain_eating,
             day1_unknown_visitor,
+            
+            day2_emily_death,
+            day2_emily_birthday,
+            day2_email_unknown,
+            day2_plan_emily_daniel,
+            day2_treatment,
+            day2_emily_document,
 
-
+            
             
         }
 
