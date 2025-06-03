@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c3e3ef7f6145c8a7692e08188c441e, type: 3}
   m_Name: GetClueEmilyBirth
   m_EditorClassIdentifier: 
-  clueId: 0
+  clueId: 16

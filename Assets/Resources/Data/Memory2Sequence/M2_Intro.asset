@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ba0d73452504d0ba963a43f5d8be149, type: 3}
-  m_Name: 2_5_BrainEvent
+  m_Name: M2_Intro
   m_EditorClassIdentifier: 
   Steps:
-  - {fileID: 11400000, guid: b2180e47d224e46dfbb443d06e7de391, type: 2}
-  - {fileID: 11400000, guid: 48af5e2f46e49422e8f160645dc23ac0, type: 2}
-  - {fileID: 11400000, guid: cbc1aefca5bc148c7a2525761bd93213, type: 2}
+  - {fileID: 11400000, guid: 0bb4e565bc0d34ca68e0b2bd15eadb15, type: 2}
+  - {fileID: 11400000, guid: 8880f54959fc34e7faf5fd4a1f2b3101, type: 2}
+  - {fileID: 11400000, guid: 99c3c280610b94f21ba7f42b363f8adf, type: 2}

@@ -41,13 +41,16 @@ namespace Scenes
         //-------- day1, 2, 3 시체, 서류더미 활성화 onoff
         public List<DayObject> DayObjects;
         //public InteractObject Day1Intro;
+
+        public InteractObject Day1Brain;
+        public InteractObject Day1Outtro;
+        public InteractObject Day2Intro;
         
+        public InteractObject Day2Brain;
+        public InteractObject Day2Return;
         
-        
-        private static int positionIdx = 0;
-        
-        
-        
+        public InteractObject Day2Outtro;
+        public InteractObject Day3Intro;
         protected override void Init()
         {
             base.SceneType = Define.SceneType.Main;
@@ -97,11 +100,8 @@ namespace Scenes
         }
         private void SetStartTransform()
         {
-            if (positionIdx < 0 || positionIdx >= _startTransforms.Count) return;
-            
-            _player.transform.position = _startTransforms[positionIdx].position;
-            _player.SetInitRotation(_startTransforms[positionIdx].eulerAngles);
-            positionIdx++;
+            _player.transform.position = _startTransforms[Manager.Data.GameDay-1].position;
+            _player.SetInitRotation(_startTransforms[Manager.Data.GameDay-1].eulerAngles);
         }
 
         public override void OnExitScene()
@@ -110,6 +110,27 @@ namespace Scenes
             base.OnExitScene();
             
             
+        }
+
+        private void ActivateTriggerEvent()
+        {
+            switch (Manager.Data.GameDay)
+            {
+                case 1:
+                    if(Manager.Data.IsCompleted(Day1Brain.interactionId)&&!Manager.Data.IsCompleted(Day1Outtro.interactionId))
+                        Day1Outtro.EnableInteraction();
+                    break;
+                case 2:
+                    if(Manager.Data.IsCompleted(Day1Outtro.interactionId)&&!Manager.Data.IsCompleted(Day2Intro.interactionId))
+                            Day2Outtro.EnableInteraction();
+                    if(Manager.Data.IsCompleted(Day2Brain .interactionId)&&!Manager.Data.IsCompleted(Day2Return.interactionId))
+                        Day2Return.EnableInteraction();
+                    break;
+                case 3:
+                    if(Manager.Data.IsCompleted(Day2Intro.interactionId)&&!Manager.Data.IsCompleted(Day3Intro.interactionId))
+                        Day3Intro.EnableInteraction();
+                    break;
+            }
         }
     }
 }
