@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d9176a566b4931b9de3ae0ffc0b360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameDay: 2
+  GameDay: 3
   interactionObjs:
   - interactionId: intro 1
     isDone: 0

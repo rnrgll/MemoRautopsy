@@ -4,6 +4,7 @@ using Event;
 using Managers;
 using Player;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Utility;
 
 namespace Scenes
@@ -12,7 +13,9 @@ namespace Scenes
     {
         [Header("Settings")] [SerializeField] private List<VCam> virtualCams;
         [SerializeField] private Animator _LOGAN;
-
+        [SerializeField] private Volume volume;
+        
+        
         [Header("Evnet Sequence")] [SerializeField]
         private EventSequence _eventSequence;
 
@@ -21,7 +24,7 @@ namespace Scenes
         {
             base.SceneType = Define.SceneType.Memory;
 
-
+            Manager.Event.Volume = volume;
             foreach (var pair in virtualCams)
             {
                 Manager.Event.RegisterVCam(pair.key, pair.vCam);

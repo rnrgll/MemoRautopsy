@@ -14,16 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Steps:
   - {fileID: 11400000, guid: 0bb4e565bc0d34ca68e0b2bd15eadb15, type: 2}
-  - {fileID: 11400000, guid: ecc52193ddc56465b9b00d92a754299d, type: 2}
-  - {fileID: 11400000, guid: 90821842e8e344c92953ebb2db0a5c50, type: 2}
-  - {fileID: 11400000, guid: c0929697fee874855a72e19fdcbe7021, type: 2}
-  - {fileID: 11400000, guid: a53f6e58c60a547e2aa6ca5e59cb1040, type: 2}
+  - {fileID: 11400000, guid: 9869d04244b8242b1abf88441778b4eb, type: 2}
   - {fileID: 11400000, guid: 0bb4e565bc0d34ca68e0b2bd15eadb15, type: 2}
-  - {fileID: 11400000, guid: fdb77d55772274c7aa7a5e78ccbda256, type: 2}
-  - {fileID: 11400000, guid: 0bb4e565bc0d34ca68e0b2bd15eadb15, type: 2}
-  - {fileID: 11400000, guid: 2e100bdcde2384f0bb43468a0378c347, type: 2}
-  - {fileID: 11400000, guid: 408bb7cdb1aa942689b78bfc271de792, type: 2}
-  - {fileID: 11400000, guid: 5028e9de361644860baded3a7be05f8f, type: 2}
-  - {fileID: 11400000, guid: a8302f2780a164b3ba0d6626e3fdf234, type: 2}
-  - {fileID: 11400000, guid: 8880f54959fc34e7faf5fd4a1f2b3101, type: 2}
-  - {fileID: 11400000, guid: 99c3c280610b94f21ba7f42b363f8adf, type: 2}
+  - {fileID: 11400000, guid: 6aaaa53a76a8d488daf3db5f969538a6, type: 2}
+  - {fileID: 11400000, guid: f5e8f406b6be5428e8d0740787177c2c, type: 2}

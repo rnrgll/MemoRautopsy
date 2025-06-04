@@ -5,6 +5,7 @@ using Event;
 using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Utility;
 
 namespace Content.UI
@@ -27,8 +28,8 @@ namespace Content.UI
 
         private CanvasGroup cg;
         private Action OnComplete;
-        private WaitUntil waitKeyInput;
         private Coroutine currentRoutine;
+        private bool skip = false;
 
         protected override void Init()
         {
@@ -36,13 +37,20 @@ namespace Content.UI
             cg = GetComponent<CanvasGroup>();
             _dialogueLines = new();
             OnComplete = null;
-            waitKeyInput = new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             
         }
 
         private void OnDisable()
         {
             OnComplete = null;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(nextKey1))
+            {
+                skip = true;
+            }
         }
 
         public void SetData(List<string> dialougeLines, Action onComplete)
@@ -121,27 +129,35 @@ namespace Content.UI
         private IEnumerator TypeLine(string line)
         {
             lineText.text = "";
+            skip = false;
             for (int i = 0; i < line.Length; i++)
             {
-                
-                if (Input.GetKeyDown(nextKey1))
+                if (skip)
                 {
                     //스킵
                     lineText.text = line;
                     break;
                 }
+                //
+                // if (Input.GetKeyDown(nextKey1))
+                // {
+                //     
+                // }
                 
-                lineText.text = $"{lineText.text}{line[i]}";
+                lineText.text += line[i];
                 
                 yield return new WaitForSeconds(typeSpeed);
             }
+
+            skip = false;
             yield return null; 
             
             //키 입력 대기
-            yield return waitKeyInput;
+            yield return new WaitUntil(() => skip);
             
             //다음 프레임까지 대기해서 중복 입력 방지
             yield return null; 
+            skip = false;
         }
         
     }

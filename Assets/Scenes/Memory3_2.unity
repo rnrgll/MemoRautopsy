@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c572831a4b0a648f292e77290e9b6e97, type: 2}
 --- !u!4 &783018862
 Transform:
   m_ObjectHideFlags: 0
