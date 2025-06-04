@@ -19,7 +19,7 @@ namespace Content.Interactable
         [Header("상호작용 ID")]
         public string interactionId;
         public string nextInteractionId;
-        
+        public int day;
         [Header("상호작용 전후 상태 설정")]
         [SerializeField] private bool hideBeforeInteraction = false;
         [SerializeField] private bool hideAfterInteraction = true;
@@ -30,7 +30,7 @@ namespace Content.Interactable
         
         
         public bool isInteractable;
-        private void Start()
+        private void Awake()
         {
             if (Manager.Data.IsCompleted(interactionId))
             {
@@ -40,7 +40,10 @@ namespace Content.Interactable
             {
                 if (isStartingInteraction)
                 {
-                    EnableInteraction(); // 시작 지점은 무조건 상호작용 가능하게
+                    if(Manager.Data.GameDay == day)
+                        EnableInteraction(); // 시작 지점은 무조건 상호작용 가능하게
+                    else
+                        HandleNotCompletedYet();
                 }
                 else
                 {
@@ -51,7 +54,14 @@ namespace Content.Interactable
             
             
         }
+
+        private void OnEnable()
+        {
+            
+        }
         
+        
+
 
         private void HandleAlreadyCompleted()
         {

@@ -127,14 +127,24 @@ namespace Content.UI
         public void UnloadClueButtons(int day)
         {
             Debug.Log(ClickedDay);
-            foreach (Transform child in _panels[day - 1].GridContent)
+            // foreach (Transform child in _panels[day - 1].GridContent)
+            // {
+            //     if (child.TryGetComponent(out ClueButton btn))
+            //     {
+            //         btn.IsSelected.Value = false;
+            //         btn.ReturnToPool();
+            //     }
+            //        
+            // }
+            var content = _panels[day - 1].GridContent;
+
+            foreach (Transform child in content.Cast<Transform>().ToArray())
             {
                 if (child.TryGetComponent(out ClueButton btn))
                 {
                     btn.IsSelected.Value = false;
                     btn.ReturnToPool();
                 }
-                   
             }
         }
 
