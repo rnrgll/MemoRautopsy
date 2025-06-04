@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba0d73452504d0ba963a43f5d8be149, type: 3}
+  m_Name: 3_4_DontEat
+  m_EditorClassIdentifier: 
+  Steps:
+  - {fileID: 11400000, guid: c9adb39657ff047cf95bec9a9b547945, type: 2}
+  - {fileID: 11400000, guid: 531b47351ae264f0999a5009a0cc5d94, type: 2}
+  - {fileID: 11400000, guid: a8302f2780a164b3ba0d6626e3fdf234, type: 2}
+  - {fileID: 11400000, guid: 96c4aa78cf03c41118d9b7a52d4200d6, type: 2}
+  - {fileID: 11400000, guid: f1bbeb85efed848028baca24672e6072, type: 2}
+  - {fileID: 11400000, guid: cb4555bb735b447dea4ae3a2ba3b334c, type: 2}

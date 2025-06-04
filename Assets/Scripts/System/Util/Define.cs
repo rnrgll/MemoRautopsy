@@ -18,6 +18,8 @@ namespace Utility
             {Scene.Memory2, "Memory2"},
             {Scene.Memory2_2, "Memory2_2"},
             {Scene.Memory3, "Memory3"},
+            {Scene.Memory3_2, "Memory3_2"},
+            {Scene.Memory3_3, "Memory3_3"},
             { Scene.BadEnding , "BadEndingScene"},
             { Scene.Ending , "EndingScene"},
             
@@ -37,6 +39,8 @@ namespace Utility
             Memory2,
             Memory2_2,
             Memory3,
+            Memory3_2,
+            Memory3_3,
             BadEnding,
             Ending,
             

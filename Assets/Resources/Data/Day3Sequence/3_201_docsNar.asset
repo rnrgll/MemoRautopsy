@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7ed7d9b9694aa59bc3057a5111e1f4, type: 3}
+  m_Name: 3_201_docsNar
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "(\uC11C\uB958\uB97C \uD3BC\uCE5C\uB2E4)"
+  - "\"\uC774\uB984 : \uB85C\uAC74 \uB9AC (Logan Lee)\""
+  - "\"\uC0AC\uB9DD\uC77C : \uC804\uB0A0 \uC624\uD6C4\""
+  - "\"\uCD94\uC815 \uC0AC\uC778 : \uAC10\uC804\uC0AC\""
+  - "\uAC10\uC804\uC0AC\uB77C... \uD55C \uBC88 \uD655\uC778\uD574\uBCFC\uAE4C?"
