@@ -41,10 +41,11 @@ namespace Managers
         
         public void RegisterVCam(string key, CinemachineVirtualCamera cam)
         {
-            if (!_vCams.ContainsKey(key))
-            {
-                _vCams.Add(key, cam);
-            }
+            // if (!_vCams.ContainsKey(key))
+            // {
+            //     _vCams.Add(key, cam);
+            // }
+            _vCams[key] = cam; // 덮어쓰기 가능!
         }
         
         public CinemachineVirtualCamera GetVCam(string key)

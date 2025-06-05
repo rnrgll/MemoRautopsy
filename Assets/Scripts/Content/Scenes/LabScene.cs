@@ -72,7 +72,7 @@ namespace Scenes
 
         private void OnEnable()
         {
-            // ActivateTriggerEvent();
+            ActivateTriggerEvent();
         }
 
         public override void OnEnterScene()
@@ -118,25 +118,21 @@ namespace Scenes
             
         }
 
-        // private void ActivateTriggerEvent()
-        // {
-        //     switch (Manager.Data.GameDay)
-        //     {
-        //         case 1:
-        //             if(Manager.Data.IsCompleted(Day1Brain.interactionId)&&!Manager.Data.IsCompleted(Day1Outtro.interactionId))
-        //                 Day1Outtro.EnableInteraction();
-        //             break;
-        //         case 2:
-        //             if(Manager.Data.IsCompleted(Day1Outtro.interactionId)&&!Manager.Data.IsCompleted(Day2Intro.interactionId))
-        //                     Day2Outtro.EnableInteraction();
-        //             if(Manager.Data.IsCompleted(Day2Brain .interactionId)&&!Manager.Data.IsCompleted(Day2Return.interactionId))
-        //                 Day2Return.EnableInteraction();
-        //             break;
-        //         case 3:
-        //             if(Manager.Data.IsCompleted(Day2Intro.interactionId)&&!Manager.Data.IsCompleted(Day3Intro.interactionId))
-        //                 Day3Intro.EnableInteraction();
-        //             break;
-        //     }
-        // }
+        private void ActivateTriggerEvent()
+        {
+            switch (Manager.Data.GameDay)
+            {
+                case 1:
+                    if(Manager.Data.IsCompleted(Day1Brain.interactionId)&&!Manager.Data.IsCompleted(Day1Outtro.interactionId))
+                        Day1Outtro.EnableInteraction();
+                    break;
+                case 2:
+                    // if(Manager.Data.IsCompleted(Day1Outtro.interactionId)&&!Manager.Data.IsCompleted(Day2Intro.interactionId))
+                    //         Day2Outtro.EnableInteraction();
+                    if(Manager.Data.IsCompleted(Day2Brain .interactionId)&&!Manager.Data.IsCompleted(Day2Return.interactionId))
+                        Day2Return.EnableInteraction();
+                    break;
+            }
+        }
     }
 }

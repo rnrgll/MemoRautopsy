@@ -10,17 +10,17 @@ namespace Content.Interactable
 
        private void OnEnable()
        {
-           choiceStep.OnClickOptionA.AddListener(AutoDestroy); 
+           choiceStep.OnClickOptionA.AddListener(AutoInvisible); 
        }
 
        private void OnDisable()
        {
-           choiceStep.OnClickOptionB.AddListener(AutoDestroy);
+           choiceStep.OnClickOptionB.AddListener(AutoInvisible);
        }
 
-       private void AutoDestroy()
+       private void AutoInvisible()
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

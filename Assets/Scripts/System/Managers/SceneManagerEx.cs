@@ -18,7 +18,7 @@ namespace Managers
         public List<GameObject> effectPanels = new ();
         private GameObject currentPanel;
         private Animator currentPanelAnimator;
-
+        
         [SerializeField] private Define.Scene PlayGameScene;
         [SerializeField] private Define.Scene EndGameScene;
         
@@ -32,6 +32,10 @@ namespace Managers
         private int PANEL_FADEIN = Animator.StringToHash("Panel In");
         private int PANEL_FADEOUT = Animator.StringToHash("Panel Out");
 
+        
+        private bool _sceneLoaded = false;
+
+        
         //----------
         private void Awake() => SingletonInit();
 
@@ -75,43 +79,56 @@ namespace Managers
             int loadSceneMode = 1)
         {
             CurrentScene?.OnExitScene();
-                
+         
+            var loadMode = (LoadSceneMode)loadSceneMode;
+            _sceneLoaded = false;
+            
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(GetSceneName(scene), (LoadSceneMode)loadSceneMode);
+            asyncOperation.allowSceneActivation = false;
+            
+            
             if (useEffect && effectPanels.Count > 0)
             {
                 yield return StartCoroutine(EffectIn(0));
             }
                 
             yield return new WaitForSeconds(effectDelay);
+            
+            //     
+            // while (asyncOperation.progress < 0.9f)
+            // {
+            //     yield return null;
+            // }
                 
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(GetSceneName(scene), (LoadSceneMode)loadSceneMode);
-            asyncOperation.allowSceneActivation = false;
-                
-            while (asyncOperation.progress < 0.9f)
-            {
-                yield return null;
-            }
-                
+            // sceneLoaded 콜백 등록
+            SceneManager.sceneLoaded += OnSceneLoaded;
             asyncOperation.allowSceneActivation = true;
                 
-            yield return null; //씬 전환 기다리기
+            yield return new WaitUntil(() => _sceneLoaded);
             
+            // 콜백 제거
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             
+            if (loadMode == LoadSceneMode.Additive)
+            {
+                Scene loadedScene = SceneManager.GetSceneByName(GetSceneName(scene));
+                if (loadedScene.IsValid())
+                {
+                    SceneManager.SetActiveScene(loadedScene);
+                }
+            }
             //fade 효과
             if (useEffect)
             {
                 yield return StartCoroutine(EffectOut());
             }
-            
-            // Additive 로드된 씬을 활성 씬으로 설정
-            Scene loadedScene = SceneManager.GetSceneByName(GetSceneName(scene));
-            if (loadedScene.IsValid())
-            {
-                SceneManager.SetActiveScene(loadedScene);
-            }
-
 
         }
         
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            _sceneLoaded = true;
+        }
         
         
         #endregion

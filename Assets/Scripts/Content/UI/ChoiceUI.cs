@@ -53,8 +53,6 @@ namespace Content.UI
             _optionA.UpdateUI();
             _optionB.UpdateUI();
             
-            
-            Debug.Log(_optionB.GetComponent<ButtonManager>().buttonText);
             OnComplete = (index) =>
             {
                 Util.UIDisable(cg);

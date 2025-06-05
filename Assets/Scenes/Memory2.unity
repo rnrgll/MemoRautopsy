@@ -352,7 +352,7 @@ MonoBehaviour:
   _player: {fileID: 5311847873307214723}
   _EmilyCarter: {fileID: 1586244225}
   _DanielBlake: {fileID: 1013419631}
-  _eventSequence: {fileID: 11400000, guid: babb8c1e453d841d39ccf2e369f39ea0, type: 2}
+  _eventSequence: {fileID: 11400000, guid: 589ab0f1202b94ead956b0891de508b8, type: 2}
 --- !u!4 &6088356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8670434676220858274, guid: 8cb853ba379f28349b90b7789c5ca5aa,
@@ -1824,6 +1824,7 @@ MonoBehaviour:
   _uiAnchor: {fileID: 535262514}
   interactionId: 
   nextInteractionId: 
+  day: 0
   hideBeforeInteraction: 0
   hideAfterInteraction: 1
   isStartingInteraction: 0
@@ -2923,7 +2924,7 @@ MonoBehaviour:
   detectLayer:
     serializedVersion: 2
     m_Bits: 64
-  eventSequence: {fileID: 11400000, guid: c572831a4b0a648f292e77290e9b6e97, type: 2}
+  eventSequence: {fileID: 11400000, guid: a11de45b275994c63bb90954c9acb91c, type: 2}
   anim: {fileID: 1013419631}
 --- !u!4 &1019937378 stripped
 Transform:
@@ -29040,6 +29041,7 @@ MonoBehaviour:
   _uiAnchor: {fileID: 656069185}
   interactionId: 
   nextInteractionId: 
+  day: 0
   hideBeforeInteraction: 0
   hideAfterInteraction: 1
   isStartingInteraction: 0
